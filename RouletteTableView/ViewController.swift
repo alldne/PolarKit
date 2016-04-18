@@ -27,7 +27,11 @@ class ViewController: UIViewController {
         for i in 0..<n {
             let inner = DebugPolarView(radius: 100, angle: Double(i) * ang)
             inner.frame = CGRectMake(0, 0, 40, 10)
-            inner.backgroundColor = UIColor.grayColor()
+            if i == 0 {
+                inner.backgroundColor = UIColor.redColor()
+            } else {
+                inner.backgroundColor = UIColor.grayColor()
+            }
             wrapper.addSubview(inner)
         }
 
