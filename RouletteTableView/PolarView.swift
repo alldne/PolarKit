@@ -33,10 +33,11 @@ class PolarView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        let localCenter = self.convertPoint(self.center, fromView: self.superview)
         for subview in self.subviews {
             if let view  = subview as? PolarView {
-                let x = self.center.x + CGFloat(view.radius * cos(view.angle))
-                let y = self.center.y + CGFloat(view.radius * sin(view.angle))
+                let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
+                let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
                 view.center = CGPointMake(x, y)
                 view.transform = CGAffineTransformMakeRotation(CGFloat(view.angle))
             }
