@@ -9,8 +9,17 @@
 import UIKit
 
 class PolarView: UIView {
-    var radius: Double = 0
-    var angle: Double = 0
+    var radius: Double = 0 {
+        didSet {
+            self.superview?.setNeedsLayout()
+        }
+    }
+
+    var angle: Double = 0 {
+        didSet {
+            self.superview?.setNeedsLayout()
+        }
+    }
 
     init(radius: Double, angle: Double) {
         self.radius = radius
