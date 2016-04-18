@@ -44,3 +44,12 @@ class PolarView: UIView {
         }
     }
 }
+
+class DebugPolarView: PolarView {
+    var showBorder: Bool = true {
+        didSet {
+            self.layer.borderWidth = CGFloat(2)
+            self.layer.borderColor = UIColor.redColor().CGColor
+        }
+    }
+}
