@@ -11,14 +11,11 @@ import UIKit
 class PolarView: UIView {
     var radius: Double = 0
     var angle: Double = 0
-    var contentView: UIView
 
-    init(contentView: UIView, radius: Double, angle: Double) {
+    init(radius: Double, angle: Double) {
         self.radius = radius
         self.angle = angle
-        self.contentView = contentView
-        super.init(frame: contentView.frame)
-        self.addSubview(contentView)
+        super.init(frame: CGRectZero)
     }
 
     required init?(coder aDecoder: NSCoder) {
