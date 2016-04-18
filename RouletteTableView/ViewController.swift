@@ -30,6 +30,15 @@ class ViewController: UIViewController {
             inner.backgroundColor = UIColor.grayColor()
             wrapper.addSubview(inner)
         }
+
+        polar.layoutIfNeeded()
+
+        UIView.animateWithDuration(2, animations: { () -> Void in
+            wrapper.angle = M_PI
+            polar.layoutIfNeeded()
+        }, completion: {(finished) in
+            print(finished)
+        })
     }
 
     override func didReceiveMemoryWarning() {
