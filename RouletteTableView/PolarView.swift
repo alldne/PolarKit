@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PolarView: UIView {
+class PolarCoordinated: UIView {
     var radius: Double = 0 {
         didSet {
             self.superview?.setNeedsLayout()
@@ -21,21 +21,28 @@ class PolarView: UIView {
         }
     }
 
-    init(radius: Double, angle: Double) {
+    init(radius: Double, angle: Double, frame: CGRect) {
         self.radius = radius
         self.angle = angle
-        super.init(frame: CGRectZero)
+        super.init(frame: frame)
+    }
+
+    convenience init() {
+        self.init(radius: 0, angle: 0, frame: CGRectZero)
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+class PolarView: PolarCoordinated {
 
     override func layoutSubviews() {
         super.layoutSubviews()
         let localCenter = self.convertPoint(self.center, fromView: self.superview)
         for subview in self.subviews {
-            if let view  = subview as? PolarView {
+            if let view  = subview as? PolarCoordinated {
                 let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
                 let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
                 view.center = CGPointMake(x, y)
