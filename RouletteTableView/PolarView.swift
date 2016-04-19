@@ -52,11 +52,28 @@ class PolarView: PolarCoordinated {
     }
 }
 
-class DebugPolarView: PolarView {
+class DebugPolarCoordinated: PolarCoordinated {
     var showBorder: Bool = true {
         didSet {
-            self.layer.borderWidth = CGFloat(2)
-            self.layer.borderColor = UIColor.redColor().CGColor
+            if showBorder != oldValue {
+                if showBorder {
+                    self.layer.borderWidth = CGFloat(2)
+                    self.layer.borderColor = UIColor.redColor().CGColor
+                } else {
+                    self.layer.borderWidth = 0
+                    self.layer.borderColor = nil
+                }
+            }
         }
+    }
+
+    override init(radius: Double, angle: Double, frame: CGRect) {
+        super.init(radius: radius, angle: angle, frame: frame)
+        self.layer.borderWidth = CGFloat(2)
+        self.layer.borderColor = UIColor.redColor().CGColor
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 }
