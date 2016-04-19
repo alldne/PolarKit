@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="384" y="515"/>
+            <point key="canvasLocation" x="652" y="259"/>
         </scene>
         <!--RotatableViewTestViewController-->
         <scene sceneID="lSm-Ot-Okh">
@@ -90,7 +90,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nY-dz-3vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1192" y="693"/>
+            <point key="canvasLocation" x="652" y="1169"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="K4y-nE-4GF">
@@ -104,11 +104,55 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wd2-dJ-Uxl"/>
                         <segue destination="Fvk-TG-2ZU" kind="relationship" relationship="viewControllers" id="m7r-ni-d2H"/>
+                        <segue destination="KuP-YM-HPp" kind="relationship" relationship="viewControllers" id="qe3-pJ-DYq"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5g-6a-fu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="178" y="1213"/>
+            <point key="canvasLocation" x="-502" y="1169"/>
+        </scene>
+        <!--CircularScrollTestViewController-->
+        <scene sceneID="K58-Kc-0N0">
+            <objects>
+                <viewController title="CircularScrollTestViewController" id="KuP-YM-HPp" customClass="CircularScrollTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LZE-v7-rmO"/>
+                        <viewControllerLayoutGuide type="bottom" id="wE2-Xb-eje"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cH2-zg-PBp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ts-jI-e1w">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="axJ-xu-evH">
+                                <rect key="frame" x="18" y="513" width="564" height="31"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="KuP-YM-HPp" eventType="valueChanged" id="kBK-D1-GqH"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wE2-Xb-eje" firstAttribute="top" secondItem="axJ-xu-evH" secondAttribute="bottom" constant="8" id="Gq1-Pg-bTo"/>
+                            <constraint firstItem="7Ts-jI-e1w" firstAttribute="top" secondItem="LZE-v7-rmO" secondAttribute="bottom" constant="-20" id="LJC-Ya-p5S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="axJ-xu-evH" secondAttribute="trailing" id="UeH-Tv-E29"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="axJ-xu-evH" secondAttribute="leading" id="dOi-SA-skA"/>
+                            <constraint firstItem="7Ts-jI-e1w" firstAttribute="width" secondItem="cH2-zg-PBp" secondAttribute="width" id="fFo-fU-XWO"/>
+                            <constraint firstItem="axJ-xu-evH" firstAttribute="top" secondItem="7Ts-jI-e1w" secondAttribute="bottom" constant="16" id="qbf-d1-guW"/>
+                            <constraint firstItem="7Ts-jI-e1w" firstAttribute="centerX" secondItem="cH2-zg-PBp" secondAttribute="centerX" id="xDj-zg-BeE"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="RotatableView" id="oOZ-vW-YXd"/>
+                    <connections>
+                        <outlet property="container" destination="7Ts-jI-e1w" id="syw-7I-lxT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sk9-1I-WvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="652" y="2101"/>
         </scene>
     </scenes>
 </document>

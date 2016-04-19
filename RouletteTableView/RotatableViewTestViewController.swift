@@ -12,10 +12,9 @@ class RotatableViewTestViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
-        self.rotatable.offset = 2 * M_PI * Double(sender.value)
+        self.rotatable.offset = 4 * M_PI * Double(sender.value)
     }
 
-    var label: UILabel!
     var bar: UIView!
 
     var rotatable: RotatableView!
@@ -39,15 +38,4 @@ class RotatableViewTestViewController: UIViewController {
         self.rotatable.frame = CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)
         self.bar.center = CGPointMake(self.rotatable.frame.size.width/2, self.rotatable.frame.size.height/2)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

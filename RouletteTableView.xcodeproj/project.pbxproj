@@ -10,6 +10,8 @@
 		EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9811CC4C2BC00209793 /* PolarView.swift */; };
 		EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9831CC508CF00209793 /* RotatableView.swift */; };
 		EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */; };
+		EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */; };
+		EE03B98D1CC65F5F00209793 /* CircularScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */; };
 		EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */; };
 		EE1C191E1CC0EB0600E6C4CC /* AnimationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */; };
 		EE1C19211CC0EB0600E6C4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */; };
@@ -21,6 +23,8 @@
 		EE03B9811CC4C2BC00209793 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
 		EE03B9831CC508CF00209793 /* RotatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableView.swift; sourceTree = "<group>"; };
 		EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewTestViewController.swift; sourceTree = "<group>"; };
+		EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollTestViewController.swift; sourceTree = "<group>"; };
+		EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollView.swift; sourceTree = "<group>"; };
 		EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestViewController.swift; sourceTree = "<group>"; };
@@ -46,6 +50,7 @@
 			children = (
 				EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */,
 				EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */,
+				EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -72,6 +77,7 @@
 				EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */,
 				EE03B9811CC4C2BC00209793 /* PolarView.swift */,
 				EE03B9831CC508CF00209793 /* RotatableView.swift */,
+				EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */,
 				EE03B9891CC65BBE00209793 /* ViewControllers */,
 				EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */,
 				EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */,
@@ -154,6 +160,8 @@
 			files = (
 				EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */,
 				EE1C191E1CC0EB0600E6C4CC /* AnimationTestViewController.swift in Sources */,
+				EE03B98D1CC65F5F00209793 /* CircularScrollView.swift in Sources */,
+				EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */,
 				EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */,
 				EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */,
 				EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */,
