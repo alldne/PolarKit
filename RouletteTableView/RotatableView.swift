@@ -17,7 +17,7 @@ class RotatableView: PolarView {
 
     var contentView: PolarCoordinated
     init(frame: CGRect) {
-        self.contentView  = PolarCoordinated(radius: 0, angle: 0, frame: frame)
+        self.contentView  = DebugPolarCoordinated(radius: 0, angle: 0, frame: frame)
         super.init(radius: 0, angle: 0, frame: frame)
         super.addSubview(self.contentView)
     }

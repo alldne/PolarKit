@@ -36,8 +36,7 @@ class PolarCoordinated: UIView {
     }
 }
 
-class PolarView: PolarCoordinated {
-
+class PolarView: DebugPolarCoordinated {
     override func layoutSubviews() {
         super.layoutSubviews()
         let localCenter = self.convertPoint(self.center, fromView: self.superview)

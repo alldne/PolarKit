@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9811CC4C2BC00209793 /* PolarView.swift */; };
 		EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9831CC508CF00209793 /* RotatableView.swift */; };
+		EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */; };
 		EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */; };
-		EE1C191E1CC0EB0600E6C4CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191D1CC0EB0600E6C4CC /* ViewController.swift */; };
+		EE1C191E1CC0EB0600E6C4CC /* AnimationTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */; };
 		EE1C19211CC0EB0600E6C4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */; };
 		EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */; };
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
@@ -19,9 +20,10 @@
 /* Begin PBXFileReference section */
 		EE03B9811CC4C2BC00209793 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
 		EE03B9831CC508CF00209793 /* RotatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableView.swift; sourceTree = "<group>"; };
+		EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewTestViewController.swift; sourceTree = "<group>"; };
 		EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EE1C191D1CC0EB0600E6C4CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestViewController.swift; sourceTree = "<group>"; };
 		EE1C19201CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1C19251CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -39,6 +41,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE03B9891CC65BBE00209793 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C191D1CC0EB0600E6C4CC /* AnimationTestViewController.swift */,
+				EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		EE1C190F1CC0EB0600E6C4CC = {
 			isa = PBXGroup;
 			children = (
@@ -59,9 +70,9 @@
 			isa = PBXGroup;
 			children = (
 				EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */,
-				EE1C191D1CC0EB0600E6C4CC /* ViewController.swift */,
 				EE03B9811CC4C2BC00209793 /* PolarView.swift */,
 				EE03B9831CC508CF00209793 /* RotatableView.swift */,
+				EE03B9891CC65BBE00209793 /* ViewControllers */,
 				EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */,
 				EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */,
 				EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */,
@@ -142,7 +153,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */,
-				EE1C191E1CC0EB0600E6C4CC /* ViewController.swift in Sources */,
+				EE1C191E1CC0EB0600E6C4CC /* AnimationTestViewController.swift in Sources */,
+				EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */,
 				EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */,
 				EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */,
 			);

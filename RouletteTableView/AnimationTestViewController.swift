@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  AnimationTestViewController.swift
 //  RouletteTableView
 //
 //  Created by Yonguk Jeong on 2016. 4. 15..
@@ -8,7 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class AnimationTestViewController: UIViewController {
+    @IBOutlet weak var container: UIView?
+
+    var offset: Double = 0
+    @IBAction func animate(sender: UIButton) {
+        UIView.animateWithDuration(2, delay: 0, options: [.BeginFromCurrentState], animations: { () -> Void in
+            print("<", NSDate(), self.offset)
+            self.offset += M_PI_2
+            self.offset %= M_PI*2
+            self.wrapper?.angle = self.offset
+            self.polar?.layoutIfNeeded()
+        }, completion: {(finished) in
+            print(finished)
+            print(">", NSDate())
+        })
+    }
+
+    var wrapper: PolarView?
+    var polar: PolarView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +34,7 @@ class ViewController: UIViewController {
         let polar = PolarView()
         polar.backgroundColor = UIColor.lightGrayColor()
         polar.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)
-        self.view.addSubview(polar)
+        self.container?.addSubview(polar)
 
         let wrapper = PolarView()
         wrapper.frame = CGRectMake(0, 0, 320, 320)
@@ -36,12 +54,8 @@ class ViewController: UIViewController {
 
         polar.layoutIfNeeded()
 
-        UIView.animateWithDuration(2, animations: { () -> Void in
-            wrapper.angle = M_PI
-            polar.layoutIfNeeded()
-        }, completion: {(finished) in
-            print(finished)
-        })
+        self.polar = polar
+        self.wrapper = wrapper
     }
 
     override func didReceiveMemoryWarning() {

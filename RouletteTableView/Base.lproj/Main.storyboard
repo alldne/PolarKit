@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AlH-2X-bKo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--ViewController-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ViewController" id="BYZ-38-t0r" customClass="AnimationTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,12 +17,98 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8p-We-ZL3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZX-yi-Oli">
+                                <rect key="frame" x="273" y="513" width="55" height="30"/>
+                                <state key="normal" title="animate"/>
+                                <connections>
+                                    <action selector="animate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="59G-pK-6Je"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="B8p-We-ZL3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2Ne-jN-NMc"/>
+                            <constraint firstItem="jZX-yi-Oli" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RRj-XD-5Qc"/>
+                            <constraint firstItem="B8p-We-ZL3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="SLB-6T-FaT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jZX-yi-Oli" secondAttribute="bottom" constant="8" id="eqy-UJ-hhW"/>
+                            <constraint firstItem="B8p-We-ZL3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hm4-of-J5L"/>
+                            <constraint firstItem="jZX-yi-Oli" firstAttribute="top" secondItem="B8p-We-ZL3" secondAttribute="bottom" constant="8" id="pkr-Ou-rrF"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="PolarView Animation" id="u6Y-ug-ALt"/>
+                    <connections>
+                        <outlet property="container" destination="B8p-We-ZL3" id="UAL-Fh-F34"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="349"/>
+            <point key="canvasLocation" x="384" y="515"/>
+        </scene>
+        <!--RotatableViewTestViewController-->
+        <scene sceneID="lSm-Ot-Okh">
+            <objects>
+                <viewController title="RotatableViewTestViewController" id="Fvk-TG-2ZU" customClass="RotatableViewTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jed-0a-6ez"/>
+                        <viewControllerLayoutGuide type="bottom" id="PW5-1M-9Ds"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7C6-pK-usU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsV-pV-b5L">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
+                                <color key="backgroundColor" red="0.4431372583" green="0.58431375029999999" blue="0.52549022440000004" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="boV-fF-JQm">
+                                <rect key="frame" x="18" y="513" width="564" height="31"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="Fvk-TG-2ZU" eventType="valueChanged" id="4sE-LJ-9eb"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gsV-pV-b5L" firstAttribute="width" secondItem="7C6-pK-usU" secondAttribute="width" id="Khb-hQ-j7n"/>
+                            <constraint firstItem="gsV-pV-b5L" firstAttribute="centerX" secondItem="7C6-pK-usU" secondAttribute="centerX" id="Lqj-Vx-Osy"/>
+                            <constraint firstItem="PW5-1M-9Ds" firstAttribute="top" secondItem="boV-fF-JQm" secondAttribute="bottom" constant="8" id="VZU-hO-2I8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="boV-fF-JQm" secondAttribute="trailing" id="bLK-5f-ByH"/>
+                            <constraint firstItem="boV-fF-JQm" firstAttribute="top" secondItem="gsV-pV-b5L" secondAttribute="bottom" constant="16" id="dyb-bx-9DP"/>
+                            <constraint firstItem="gsV-pV-b5L" firstAttribute="top" secondItem="Jed-0a-6ez" secondAttribute="bottom" constant="-20" id="kza-G8-YnD"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="boV-fF-JQm" secondAttribute="leading" id="qVz-0a-xFy"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="RotatableView" id="5E1-sC-ZqP"/>
+                    <connections>
+                        <outlet property="container" destination="gsV-pV-b5L" id="AUm-Bp-uPw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9nY-dz-3vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192" y="693"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="K4y-nE-4GF">
+            <objects>
+                <tabBarController id="AlH-2X-bKo" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="CHR-kU-QkL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wd2-dJ-Uxl"/>
+                        <segue destination="Fvk-TG-2ZU" kind="relationship" relationship="viewControllers" id="m7r-ni-d2H"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u5g-6a-fu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="178" y="1213"/>
         </scene>
     </scenes>
 </document>
