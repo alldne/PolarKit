@@ -30,6 +30,29 @@ class RouletteTableViewTests: XCTestCase {
         }
         XCTAssert(test(x1: 1, y1: 1, x2: 1, y2: 1, expected: 0))
         XCTAssert(test(x1: -1.333343505859375, y1: -2.5, x2: -1.333343505859375, y2: -2.5, expected: 0))
+    }
 
+    func testBoundFunction() {
+        do {
+            let bound = makeBoundFunction(lower: 0, upper: 10, margin: 2)
+            XCTAssert(bound(0) == 0)
+            XCTAssert(bound(5) == 5)
+            XCTAssert(bound(10) == 10)
+            XCTAssert(bound(11) <=~ 11)
+            XCTAssert(bound(15) <=~ 12)
+            XCTAssert(bound(20) <=~ 12)
+            XCTAssert(bound(10.0001) <=~ 10.0001)
+            XCTAssert(bound(10*1000000) <=~ 12)
+            XCTAssert(bound(-10*100000) >=~ -2)
+        }
+
+        do {
+            let bound = makeBoundFunction(lower: -100, upper: 10, margin: 10)
+            XCTAssert(bound(-100) == -100)
+            XCTAssert(bound(5) == 5)
+            XCTAssert(bound(10) == 10)
+            XCTAssert(bound(10*1000000) <=~ 20)
+            XCTAssert(bound(-10*100000) >=~ -110)
+        }
     }
 }

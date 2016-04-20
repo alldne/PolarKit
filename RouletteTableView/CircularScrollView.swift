@@ -40,6 +40,20 @@ func getAngle(a a: CGPoint, b: CGPoint) -> Double {
     return rad.native
 }
 
+func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
+    return { (input) in
+        if lower <= input && input <= upper {
+            return input
+        }
+        if input < lower {
+            let limit = lower - margin
+            return limit + margin / (lower - input + 1)
+        }
+        let limit = upper + margin
+        return limit - margin / (input - upper + 1)
+    }
+}
+
 class CircularScrollView: RotatableView {
     override init(frame: CGRect) {
         self.contentView = PolarView(radius: 0, angle: 0, frame: frame)
