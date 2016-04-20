@@ -18,6 +18,7 @@
 		EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */; };
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
 		EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */; };
+		EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouletteTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteTableViewTests.swift; sourceTree = "<group>"; };
 		EE9D2AD61CC766F800C943DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproximateOperatorsForDouble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */,
+				EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */,
 				EE9D2AD61CC766F800C943DB /* Info.plist */,
 			);
 			path = RouletteTableViewTests;
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */,
+				EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
