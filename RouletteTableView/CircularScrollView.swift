@@ -47,10 +47,10 @@ func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (D
         }
         if input < lower {
             let limit = lower - margin
-            return limit + margin / (lower - input + 1)
+            return limit + pow(margin, 2) / (lower - input + margin)
         }
         let limit = upper + margin
-        return limit - margin / (input - upper + 1)
+        return limit - pow(margin, 2) / (input - upper + margin)
     }
 }
 
