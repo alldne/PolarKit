@@ -17,7 +17,18 @@
 		EE1C19211CC0EB0600E6C4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */; };
 		EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */; };
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
+		EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EE9D2AD71CC766F800C943DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EE1C19101CC0EB0600E6C4CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EE1C19171CC0EB0600E6C4CC;
+			remoteInfo = RouletteTableView;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		EE03B9811CC4C2BC00209793 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
@@ -32,10 +43,20 @@
 		EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1C19251CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE1C19271CC0EB0600E6C4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouletteTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteTableViewTests.swift; sourceTree = "<group>"; };
+		EE9D2AD61CC766F800C943DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		EE1C19151CC0EB0600E6C4CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE9D2ACF1CC766F800C943DB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -59,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1C191A1CC0EB0600E6C4CC /* RouletteTableView */,
+				EE9D2AD31CC766F800C943DB /* RouletteTableViewTests */,
 				EE1C19191CC0EB0600E6C4CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */,
+				EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -85,6 +108,15 @@
 				EE1C19271CC0EB0600E6C4CC /* Info.plist */,
 			);
 			path = RouletteTableView;
+			sourceTree = "<group>";
+		};
+		EE9D2AD31CC766F800C943DB /* RouletteTableViewTests */ = {
+			isa = PBXGroup;
+			children = (
+				EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */,
+				EE9D2AD61CC766F800C943DB /* Info.plist */,
+			);
+			path = RouletteTableViewTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -107,6 +139,24 @@
 			productReference = EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */;
 			productType = "com.apple.product-type.application";
 		};
+		EE9D2AD11CC766F800C943DB /* RouletteTableViewTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "RouletteTableViewTests" */;
+			buildPhases = (
+				EE9D2ACE1CC766F800C943DB /* Sources */,
+				EE9D2ACF1CC766F800C943DB /* Frameworks */,
+				EE9D2AD01CC766F800C943DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EE9D2AD81CC766F800C943DB /* PBXTargetDependency */,
+			);
+			name = RouletteTableViewTests;
+			productName = RouletteTableViewTests;
+			productReference = EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -119,6 +169,10 @@
 				TargetAttributes = {
 					EE1C19171CC0EB0600E6C4CC = {
 						CreatedOnToolsVersion = 7.2.1;
+					};
+					EE9D2AD11CC766F800C943DB = {
+						CreatedOnToolsVersion = 7.2.1;
+						TestTargetID = EE1C19171CC0EB0600E6C4CC;
 					};
 				};
 			};
@@ -136,6 +190,7 @@
 			projectRoot = "";
 			targets = (
 				EE1C19171CC0EB0600E6C4CC /* RouletteTableView */,
+				EE9D2AD11CC766F800C943DB /* RouletteTableViewTests */,
 			);
 		};
 /* End PBXProject section */
@@ -148,6 +203,13 @@
 				EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */,
 				EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */,
 				EE1C19211CC0EB0600E6C4CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EE9D2AD01CC766F800C943DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,7 +230,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EE9D2ACE1CC766F800C943DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EE9D2AD81CC766F800C943DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EE1C19171CC0EB0600E6C4CC /* RouletteTableView */;
+			targetProxy = EE9D2AD71CC766F800C943DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */ = {
@@ -293,6 +371,30 @@
 			};
 			name = Release;
 		};
+		EE9D2AD91CC766F800C943DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RouletteTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RouletteTableView.app/RouletteTableView";
+			};
+			name = Debug;
+		};
+		EE9D2ADA1CC766F800C943DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RouletteTableViewTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableViewTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RouletteTableView.app/RouletteTableView";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -313,6 +415,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "RouletteTableViewTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EE9D2AD91CC766F800C943DB /* Debug */,
+				EE9D2ADA1CC766F800C943DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
