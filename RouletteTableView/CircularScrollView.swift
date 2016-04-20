@@ -43,7 +43,6 @@ func getAngle(a a: CGPoint, b: CGPoint) -> Double {
 class CircularScrollView: RotatableView {
     override init(frame: CGRect) {
         self.contentView = PolarView(radius: 0, angle: 0, frame: frame)
-        self.contentView.layer.borderColor = UIColor.yellowColor().CGColor
         super.init(frame: frame)
         super.addSubview(self.contentView)
 
@@ -56,6 +55,7 @@ class CircularScrollView: RotatableView {
     }
 
     private var contentView: PolarView
+
     var contentOffset: Double {
         get {
             return -1 * self.offset
@@ -65,7 +65,9 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    var subviewsToShow: [PolarCoordinated] {
+    var polarCoordinatedSubviews: [PolarCoordinated] = []
+
+    private var subviewsToShow: [PolarCoordinated] {
         let lower = self.contentOffset
         let upper = self.contentOffset + M_PI * 2
         return self.polarCoordinatedSubviews.filter { (p) -> Bool in
@@ -73,46 +75,51 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    var polarCoordinatedSubviews: [PolarCoordinated] = []
-
-    var formerPoint: CGPoint!
-    func dragging(recognizer: UIPanGestureRecognizer) {
-        switch recognizer.state {
-        case .Began:
-            self.formerPoint = recognizer.locationInView(self)
-        case .Changed:
-            let v1 = self.formerPoint - self.center
-            let v2 = recognizer.locationInView(self) - self.center
-            self.contentOffset += getAngle(a: v2, b: v1)
-            self.formerPoint = recognizer.locationInView(self)
-        case .Ended:
-            self.formerPoint = nil
-        case .Cancelled:
-            self.formerPoint = nil
-        default:
-            break
-        }
-    }
-
-    override func addSubview(view: UIView) { }
+    private var formerTouchPoint: CGPoint!
 
     func addSubview(polarCoordinated view: PolarCoordinated) {
         if !self.polarCoordinatedSubviews.contains(view) {
             self.polarCoordinatedSubviews.append(view)
         }
+
         self.setNeedsLayout()
     }
 
+    func dragging(recognizer: UIPanGestureRecognizer) {
+        switch recognizer.state {
+        case .Began:
+            self.formerTouchPoint = recognizer.locationInView(self)
+        case .Changed:
+            let v1 = self.formerTouchPoint - self.center
+            let v2 = recognizer.locationInView(self) - self.center
+            self.contentOffset += getAngle(a: v2, b: v1)
+            self.formerTouchPoint = recognizer.locationInView(self)
+        case .Ended:
+            self.formerTouchPoint = nil
+        case .Cancelled:
+            self.formerTouchPoint = nil
+        default:
+            break
+        }
+    }
+
+    // MARK: UIView methods
+
+    override func addSubview(view: UIView) { }
+
     override func layoutSubviews() {
         self.contentView.frame.size = self.frame.size
+
         for subview in self.subviewsToShow {
             self.contentView.addSubview(subview)
         }
+
         for subview in self.contentView.subviews {
             if let polar = subview as? PolarCoordinated where !self.subviewsToShow.contains(polar){
                 polar.removeFromSuperview()
             }
         }
+
         super.layoutSubviews()
     }
 
