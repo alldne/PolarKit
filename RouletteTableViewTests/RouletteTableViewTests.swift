@@ -58,6 +58,14 @@ class RouletteTableViewTests: XCTestCase {
             XCTAssert(bound(10.0001) <=~ 10.0001)
             XCTAssert(bound(10*1000000) <=~ 12)
             XCTAssert(bound(-10*100000) >=~ -2)
+
+            let n = 100000
+            let dx = 1.0/Double(n)
+            for i in 0..<n {
+                let x = 10 + Double(i)*dx
+                let bounded = bound(x)
+                XCTAssert(bounded <=~ x, "\(bounded), \(x)")
+            }
         }
 
         do {
