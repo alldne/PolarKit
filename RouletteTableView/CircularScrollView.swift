@@ -83,12 +83,20 @@ class CircularScrollView: RotatableView {
 
     private var contentView: PolarView
 
+    private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
+
+    var contentLength: Double = 0 {
+        didSet {
+            self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
+        }
+    }
+
     var contentOffset: Double {
         get {
             return -1 * self.offset
         }
         set {
-            self.offset = -1 * newValue
+            self.offset = -1 * self.bound(newValue)
         }
     }
 
@@ -102,7 +110,9 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    private var formerTouchPoint: CGPoint!
+    private var beginTouchPoint: CGPoint!
+    private var beginContentOffset: Double!
+    private var a: Double = 0
 
     func addSubview(polarCoordinated view: PolarCoordinated) {
         if !self.polarCoordinatedSubviews.contains(view) {
@@ -115,16 +125,19 @@ class CircularScrollView: RotatableView {
     func dragging(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            self.formerTouchPoint = recognizer.locationInView(self)
+            self.beginTouchPoint = recognizer.locationInView(self) - self.center
+            self.beginContentOffset = self.contentOffset
+            self.a = 0
         case .Changed:
-            let v1 = self.formerTouchPoint - self.center
-            let v2 = recognizer.locationInView(self) - self.center
-            self.contentOffset += getAngle(a: v2, b: v1)
-            self.formerTouchPoint = recognizer.locationInView(self)
+            let v = recognizer.locationInView(self) - self.center
+            self.a = getNearbyAngle(a: v, b: self.beginTouchPoint, currentPositon: self.a)
+            self.contentOffset = self.beginContentOffset + self.a
         case .Ended:
-            self.formerTouchPoint = nil
+            self.beginTouchPoint = nil
+            self.a = 0
         case .Cancelled:
-            self.formerTouchPoint = nil
+            self.beginTouchPoint = nil
+            self.a = 0
         default:
             break
         }

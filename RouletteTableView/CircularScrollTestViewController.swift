@@ -35,6 +35,7 @@ class CircularScrollTestViewController: UIViewController {
             self.circularScrollView.addSubview(polarCoordinated: p)
         }
         self.container.addSubview(self.circularScrollView)
+        self.circularScrollView.contentLength = 4 * M_PI
     }
 
     override func didReceiveMemoryWarning() {
