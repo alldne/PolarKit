@@ -40,6 +40,19 @@ func getAngle(a a: CGPoint, b: CGPoint) -> Double {
     return rad.native
 }
 
+let PI_DOUBLED = 2 * M_PI
+func getNearbyAngle(a a: CGPoint, b: CGPoint, currentPositon: Double) -> Double {
+    let angle = getAngle(a: a, b: b)
+    let alpha = currentPositon % PI_DOUBLED
+
+    if angle < alpha - M_PI {
+        return currentPositon - alpha + angle + PI_DOUBLED
+    } else if angle > alpha + M_PI {
+        return currentPositon - alpha + angle - PI_DOUBLED
+    }
+    return currentPositon - alpha + angle
+}
+
 func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
     return { (input) in
         if lower <= input && input <= upper {
