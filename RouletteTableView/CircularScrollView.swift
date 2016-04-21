@@ -67,6 +67,20 @@ func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (D
     }
 }
 
+func makeReverseBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
+    return { (input) in
+        if lower <= input && input <= upper {
+            return input
+        }
+        if input < lower {
+            let limit = lower - margin
+            return lower + margin - pow(margin, 2) / (input - limit)
+        }
+        let limit = upper + margin
+        return upper - margin - pow(margin, 2) / (input - limit)
+    }
+}
+
 class CircularScrollView: RotatableView {
     override init(frame: CGRect) {
         self.contentView = PolarView(radius: 0, angle: 0, frame: frame)
