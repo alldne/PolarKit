@@ -112,7 +112,19 @@ class CircularScrollView: RotatableView {
             return -1 * self.offset
         }
         set {
-            self.offset = -1 * self.bound(newValue)
+            self.offset = -1 * newValue
+            self._dragOffset = self.boundReverse(newValue)
+        }
+    }
+
+    private var _dragOffset: Double = 0
+    private var dragOffset: Double {
+        get {
+            return self._dragOffset
+        }
+        set {
+            self._dragOffset = newValue
+            self.contentOffset = self.bound(newValue)
         }
     }
 
@@ -126,9 +138,13 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    private var beginTouchPoint: CGPoint!
-    private var beginContentOffset: Double!
-    private var a: Double = 0
+    private struct TouchInfo {
+        var beginPoint: CGPoint
+        var beginDragOffset: Double
+        var offsetFromBeginPoint: Double
+    }
+
+    private var touchInfo: TouchInfo!
 
     func addSubview(polarCoordinated view: PolarCoordinated) {
         if !self.polarCoordinatedSubviews.contains(view) {
@@ -141,19 +157,16 @@ class CircularScrollView: RotatableView {
     func dragging(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            self.beginTouchPoint = recognizer.locationInView(self) - self.center
-            self.beginContentOffset = self.boundReverse(self.contentOffset)
-            self.a = 0
+            let beginPoint = recognizer.locationInView(self) - self.center
+            self.touchInfo = TouchInfo(beginPoint: beginPoint, beginDragOffset: self.dragOffset, offsetFromBeginPoint: 0)
         case .Changed:
             let v = recognizer.locationInView(self) - self.center
-            self.a = getNearbyAngle(a: v, b: self.beginTouchPoint, currentPositon: self.a)
-            self.contentOffset = self.beginContentOffset + self.a
+            self.touchInfo.offsetFromBeginPoint = getNearbyAngle(a: v, b: self.touchInfo.beginPoint, currentPositon: self.touchInfo.offsetFromBeginPoint)
+            self.dragOffset = self.touchInfo.beginDragOffset + self.touchInfo.offsetFromBeginPoint
         case .Ended:
-            self.beginTouchPoint = nil
-            self.a = 0
+            self.touchInfo = nil
         case .Cancelled:
-            self.beginTouchPoint = nil
-            self.a = 0
+            self.touchInfo = nil
         default:
             break
         }
