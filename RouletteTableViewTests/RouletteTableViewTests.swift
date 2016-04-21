@@ -49,6 +49,7 @@ class RouletteTableViewTests: XCTestCase {
     func testBoundFunction() {
         do {
             let bound = makeBoundFunction(lower: 0, upper: 10, margin: 2)
+            let reverse = makeReverseBoundFunction(lower: 0, upper: 10, margin: 2)
             XCTAssert(bound(0) == 0)
             XCTAssert(bound(5) == 5)
             XCTAssert(bound(10) == 10)

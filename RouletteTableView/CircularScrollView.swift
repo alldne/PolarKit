@@ -98,10 +98,12 @@ class CircularScrollView: RotatableView {
     private var contentView: PolarView
 
     private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
+    private var boundReverse = makeReverseBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
 
     var contentLength: Double = 0 {
         didSet {
             self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
+            self.boundReverse = makeReverseBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
         }
     }
 
@@ -140,7 +142,7 @@ class CircularScrollView: RotatableView {
         switch recognizer.state {
         case .Began:
             self.beginTouchPoint = recognizer.locationInView(self) - self.center
-            self.beginContentOffset = self.contentOffset
+            self.beginContentOffset = self.boundReverse(self.contentOffset)
             self.a = 0
         case .Changed:
             let v = recognizer.locationInView(self) - self.center
