@@ -19,6 +19,7 @@
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
 		EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */; };
 		EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */; };
+		EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteTableViewTests.swift; sourceTree = "<group>"; };
 		EE9D2AD61CC766F800C943DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproximateOperatorsForDouble.swift; sourceTree = "<group>"; };
+		EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometryExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				EE03B9811CC4C2BC00209793 /* PolarView.swift */,
 				EE03B9831CC508CF00209793 /* RotatableView.swift */,
 				EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */,
+				EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */,
 				EE03B9891CC65BBE00209793 /* ViewControllers */,
 				EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */,
 				EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */,
@@ -229,6 +232,7 @@
 				EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */,
 				EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */,
 				EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */,
+				EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */,
 				EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +431,7 @@
 				EE9D2ADA1CC766F800C943DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

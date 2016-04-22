@@ -8,51 +8,6 @@
 
 import UIKit
 
-func - (a: CGPoint, b: CGPoint) -> CGPoint {
-    return CGPointMake(a.x - b.x, a.y - b.y)
-}
-
-func distance(point: CGPoint) -> CGFloat {
-    return sqrt(pow(point.x, 2) + pow(point.y, 2))
-}
-
-func getAngle(a a: CGPoint, b: CGPoint) -> Double {
-    let distA = distance(a)
-    let distB = distance(b)
-    if distA == 0 || distB == 0 {
-        return 0.0
-    }
-
-    var cosTheta = (a.x*b.x + a.y*b.y) / (distA * distB)
-    // acos() returns NaN for |x| > 1.
-    // Theoretically, |cosTheta| <= 1 but due to lack of floating point precision,
-    // cosTheta could be slightly bigger or smaller than the range like 1.0000000000000002
-    if cosTheta > 1 {
-        cosTheta = 1.0
-    } else if cosTheta < -1 {
-        cosTheta = -1.0
-    }
-    let rad = acos(cosTheta)
-
-    if a.x*b.y - a.y*b.x < 0 {
-        return -rad.native
-    }
-    return rad.native
-}
-
-let PI_DOUBLED = 2 * M_PI
-func getNearbyAngle(a a: CGPoint, b: CGPoint, currentPositon: Double) -> Double {
-    let angle = getAngle(a: a, b: b)
-    let alpha = currentPositon % PI_DOUBLED
-
-    if angle < alpha - M_PI {
-        return currentPositon - alpha + angle + PI_DOUBLED
-    } else if angle > alpha + M_PI {
-        return currentPositon - alpha + angle - PI_DOUBLED
-    }
-    return currentPositon - alpha + angle
-}
-
 func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
     return { (input) in
         if lower <= input && input <= upper {
@@ -109,10 +64,10 @@ class CircularScrollView: RotatableView {
 
     var contentOffset: Double {
         get {
-            return -1 * self.offset
+            return -self.offset
         }
         set {
-            self.offset = -1 * newValue
+            self.offset = -newValue
             self._dragOffset = self.boundReverse(newValue)
         }
     }
@@ -139,9 +94,9 @@ class CircularScrollView: RotatableView {
     }
 
     private struct TouchInfo {
-        var beginPoint: CGPoint
-        var beginDragOffset: Double
-        var offsetFromBeginPoint: Double
+        var initialPoint: CGVector
+        var initialDragOffset: Double
+        var offsetFromInitialPoint: Double
     }
 
     private var touchInfo: TouchInfo!
@@ -157,12 +112,12 @@ class CircularScrollView: RotatableView {
     func dragging(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .Began:
-            let beginPoint = recognizer.locationInView(self) - self.center
-            self.touchInfo = TouchInfo(beginPoint: beginPoint, beginDragOffset: self.dragOffset, offsetFromBeginPoint: 0)
+            let initialPoint = recognizer.locationInView(self) - self.center
+            self.touchInfo = TouchInfo(initialPoint: initialPoint, initialDragOffset: self.dragOffset, offsetFromInitialPoint: 0)
         case .Changed:
             let v = recognizer.locationInView(self) - self.center
-            self.touchInfo.offsetFromBeginPoint = getNearbyAngle(a: v, b: self.touchInfo.beginPoint, currentPositon: self.touchInfo.offsetFromBeginPoint)
-            self.dragOffset = self.touchInfo.beginDragOffset + self.touchInfo.offsetFromBeginPoint
+            self.touchInfo.offsetFromInitialPoint = v.getNearbyAngle(self.touchInfo.initialPoint, hint: self.touchInfo.offsetFromInitialPoint)
+            self.dragOffset = self.touchInfo.initialDragOffset + self.touchInfo.offsetFromInitialPoint
         case .Ended:
             self.touchInfo = nil
         case .Cancelled:

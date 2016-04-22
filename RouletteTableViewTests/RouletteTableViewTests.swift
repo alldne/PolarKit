@@ -23,9 +23,9 @@ class RouletteTableViewTests: XCTestCase {
 
     func testGetAngle() {
         func test(x1 x1: CGFloat, y1: CGFloat, x2: CGFloat, y2: CGFloat, expected: Double) -> Bool {
-            let p1 = CGPointMake(x1, y1)
-            let p2 = CGPointMake(x2, y2)
-            let result = getAngle(a: p1, b: p2)
+            let p1 = CGVectorMake(x1, y1)
+            let p2 = CGVectorMake(x2, y2)
+            let result = p1.getAngle(p2)
             return result ==~ expected
         }
         XCTAssert(test(x1: 1, y1: 1, x2: 1, y2: 1, expected: 0))
@@ -34,9 +34,9 @@ class RouletteTableViewTests: XCTestCase {
 
     func testGetNearbyAngle() {
         func test(x1 x1: CGFloat, y1: CGFloat, x2: CGFloat, y2: CGFloat, currentPosition: Double, expected: Double) -> Bool {
-            let p1 = CGPointMake(x1, y1)
-            let p2 = CGPointMake(x2, y2)
-            let result = getNearbyAngle(a: p1, b: p2, currentPositon: currentPosition)
+            let p1 = CGVectorMake(x1, y1)
+            let p2 = CGVectorMake(x2, y2)
+            let result = p1.getNearbyAngle(p2, hint: currentPosition)
             return result ==~ expected
         }
         XCTAssert(test(x1: 1, y1: 1, x2: 1, y2: 1, currentPosition: 0.0, expected: 0))
