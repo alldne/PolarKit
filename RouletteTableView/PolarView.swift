@@ -9,22 +9,39 @@
 import UIKit
 
 class PolarCoordinated: UIView {
-    var radius: Double = 0 {
-        didSet {
-            self.superview?.setNeedsLayout()
+    override class func layerClass() -> AnyClass {
+        return PolarCoordinatedLayer.self
+    }
+
+    override var layer: PolarCoordinatedLayer {
+        // CHECK
+        return super.layer as! PolarCoordinatedLayer
+    }
+
+    var radius: Double {
+        set {
+            self.layer.radius = newValue
+            self.superview?.setNeedsDisplay()
+        }
+        get {
+            return self.layer.radius
         }
     }
 
-    var angle: Double = 0 {
-        didSet {
-            self.superview?.setNeedsLayout()
+    var angle: Double {
+        set {
+            self.layer.angle = newValue
+            self.superview?.setNeedsDisplay()
+        }
+        get {
+            return self.layer.angle
         }
     }
 
     init(radius: Double, angle: Double, frame: CGRect) {
+        super.init(frame: frame)
         self.radius = radius
         self.angle = angle
-        super.init(frame: frame)
     }
 
     convenience init() {
