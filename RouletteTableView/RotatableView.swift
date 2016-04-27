@@ -8,18 +8,30 @@
 
 import UIKit
 
-class RotatableView: PolarView {
-    var offset: Double = 0 {
-        didSet {
-            self.contentView.angle = offset
+class RotatableView: UIView {
+    override class func layerClass() -> AnyClass {
+        return RotatableLayer.self
+    }
+
+    override var layer: RotatableLayer {
+        return super.layer as! RotatableLayer
+    }
+
+    var offset: Double {
+        get {
+            return self.layer.offset
+        }
+        set {
+            self.layer.offset = newValue
         }
     }
 
-    private var contentView: PolarCoordinated
-    init(frame: CGRect) {
-        self.contentView  = DebugPolarCoordinated(radius: 0, angle: 0, frame: frame)
-        super.init(radius: 0, angle: 0, frame: frame)
-        super.addSubview(self.contentView)
+    private var contentView: UIView
+    override init(frame: CGRect) {
+        self.contentView = UIView(frame: frame)
+        super.init(frame: frame)
+        // FIXME: what if self.contentView.removeFromSuperview()?
+        self.layer.contentLayer.addSublayer(self.contentView.layer)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -28,10 +40,5 @@ class RotatableView: PolarView {
 
     override func addSubview(view: UIView) {
         self.contentView.addSubview(view)
-    }
-
-    override func layoutSubviews() {
-        self.contentView.bounds.size = self.bounds.size
-        super.layoutSubviews()
     }
 }
