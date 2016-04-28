@@ -31,6 +31,8 @@ class PolarCoordinated: UIView {
     var angle: Double {
         set {
             self.layer.angle = newValue
+
+            // FIXME: Is this necessary?
             self.superview?.setNeedsDisplay()
         }
         get {
@@ -62,7 +64,6 @@ class PolarView: DebugPolarCoordinated {
                 let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
                 let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
                 view.center = CGPointMake(x, y)
-                view.transform = CGAffineTransformMakeRotation(CGFloat(view.angle))
             }
         }
     }
