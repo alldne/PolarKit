@@ -15,6 +15,13 @@ class RotatableViewTestViewController: UIViewController {
         self.rotatable.offset = 4 * M_PI * Double(sender.value)
     }
 
+    @IBAction func tapped(sender: AnyObject) {
+        let anim = CABasicAnimation(keyPath: "offset")
+        let t = self.rotatable.offset + M_PI_2
+        anim.toValue = self.rotatable.offset + M_PI_2
+        self.rotatable.layer.addAnimation(anim, forKey: "myrotation")
+    }
+
     var bar: UIView!
 
     var rotatable: RotatableView!

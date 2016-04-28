@@ -64,6 +64,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsV-pV-b5L">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
                                 <color key="backgroundColor" red="0.4431372583" green="0.58431375029999999" blue="0.52549022440000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4AE-zE-T6E" appends="YES" id="MrS-4B-45j"/>
+                                </connections>
                             </view>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="boV-fF-JQm">
                                 <rect key="frame" x="18" y="513" width="564" height="31"/>
@@ -89,6 +93,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9nY-dz-3vq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4AE-zE-T6E">
+                    <connections>
+                        <action selector="tapped:" destination="Fvk-TG-2ZU" id="0ZV-MC-Fff"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="652" y="1169"/>
         </scene>
