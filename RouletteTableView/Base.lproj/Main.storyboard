@@ -6,49 +6,6 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--ViewController-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController title="ViewController" id="BYZ-38-t0r" customClass="AnimationTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B8p-We-ZL3">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZX-yi-Oli">
-                                <rect key="frame" x="273" y="513" width="55" height="30"/>
-                                <state key="normal" title="animate"/>
-                                <connections>
-                                    <action selector="animate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="59G-pK-6Je"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="B8p-We-ZL3" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="2Ne-jN-NMc"/>
-                            <constraint firstItem="jZX-yi-Oli" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RRj-XD-5Qc"/>
-                            <constraint firstItem="B8p-We-ZL3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-20" id="SLB-6T-FaT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="jZX-yi-Oli" secondAttribute="bottom" constant="8" id="eqy-UJ-hhW"/>
-                            <constraint firstItem="B8p-We-ZL3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hm4-of-J5L"/>
-                            <constraint firstItem="jZX-yi-Oli" firstAttribute="top" secondItem="B8p-We-ZL3" secondAttribute="bottom" constant="8" id="pkr-Ou-rrF"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="PolarView Animation" id="u6Y-ug-ALt"/>
-                    <connections>
-                        <outlet property="container" destination="B8p-We-ZL3" id="UAL-Fh-F34"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="652" y="259"/>
-        </scene>
         <!--RotatableViewTestViewController-->
         <scene sceneID="lSm-Ot-Okh">
             <objects>
@@ -111,7 +68,6 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="wd2-dJ-Uxl"/>
                         <segue destination="Fvk-TG-2ZU" kind="relationship" relationship="viewControllers" id="m7r-ni-d2H"/>
                         <segue destination="KuP-YM-HPp" kind="relationship" relationship="viewControllers" id="qe3-pJ-DYq"/>
                     </connections>
