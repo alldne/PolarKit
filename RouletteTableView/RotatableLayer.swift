@@ -37,16 +37,26 @@ class RotatableLayer: CALayer {
     }
 
     override init(layer: AnyObject) {
+        // This initializer is used to create shadow copies of layers, for example, for the presentationLayer method. 
+        // Using this method in any other situation will produce undefined behavior.
+        // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CALayer_class/#//apple_ref/occ/instm/CALayer/initWithLayer:
+
         super.init(layer: layer)
         if let layer = layer as? RotatableLayer {
-            self.offset = layer.offset
-            self.contentLayer = PolarCoordinatedLayer(layer: layer.contentLayer)
-            self.addSublayer(self.contentLayer)
-            self.contentLayer.position = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+            // FIXME: Unsafe recovering of the reference to contentLayer.
+            // RotatableLayer must have one or more layers and the first one should be PolarCoordinatedLayer.
+            if let contentLayer = self.sublayers?.first as? PolarCoordinatedLayer {
+                self.contentLayer = contentLayer
+            }
         }
     }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override class func needsDisplayForKey(key: String) -> Bool {
+        // TODO: Not quite clear that returning true for this method causes drawing.
+        return key == "offset" || super.needsDisplayForKey(key)
     }
 }

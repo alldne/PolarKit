@@ -30,6 +30,10 @@ class RotatableView: UIView {
     override init(frame: CGRect) {
         self.contentView = UIView(frame: frame)
         super.init(frame: frame)
+
+        // FIXME: without setting a background color explicitly, background color is black (as I know it means no drawing)
+        self.backgroundColor = UIColor.clearColor()
+
         // FIXME: what if self.contentView.removeFromSuperview()?
         self.layer.contentLayer.addSublayer(self.contentView.layer)
     }
