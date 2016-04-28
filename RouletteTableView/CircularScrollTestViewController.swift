@@ -21,7 +21,8 @@ class CircularScrollTestViewController: UIViewController {
         self.circularScrollView = CircularScrollView(frame: CGRectZero)
 
         let n = 24
-        let ang = 4 * M_PI / Double(n)
+        let contentLength = 4 * M_PI
+        let ang = contentLength / Double(n)
         for i in 0..<n {
             let p = PolarCoordinated(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 20))
             let ratio = CGFloat(Double(i) / Double(n))
@@ -35,6 +36,7 @@ class CircularScrollTestViewController: UIViewController {
             self.circularScrollView.addSubview(polarCoordinated: p)
         }
         self.container.addSubview(self.circularScrollView)
+        self.circularScrollView.contentLength = contentLength
     }
 
     override func didReceiveMemoryWarning() {

@@ -64,10 +64,10 @@ class CircularScrollView: RotatableView {
 
     var contentOffset: Double {
         get {
-            return -self.offset
+            return self.offset
         }
         set {
-            self.offset = -newValue
+            self.offset = newValue
             self._dragOffset = self.boundReverse(newValue)
         }
     }
