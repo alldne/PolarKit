@@ -24,8 +24,7 @@ class RotatableLayer: CALayer {
         }
         set {
             super.bounds = newValue
-            self.contentLayer.bounds.size = newValue.size
-            self.contentLayer.position = CGPointMake(newValue.size.width/2, newValue.size.height/2)
+            self.updateContentLayerFitToSize(newValue.size)
         }
     }
     var contentLayer: PolarCoordinatedLayer = PolarCoordinatedLayer()
@@ -33,7 +32,12 @@ class RotatableLayer: CALayer {
     override init() {
         super.init()
         self.addSublayer(self.contentLayer)
-        self.contentLayer.position = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+        self.updateContentLayerFitToSize(self.bounds.size)
+    }
+
+    private func updateContentLayerFitToSize(size: CGSize) {
+        self.contentLayer.bounds.size = size
+        self.contentLayer.position = CGPointMake(size.width/2, size.height/2)
     }
 
     override init(layer: AnyObject) {
@@ -42,7 +46,7 @@ class RotatableLayer: CALayer {
         // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CALayer_class/#//apple_ref/occ/instm/CALayer/initWithLayer:
 
         super.init(layer: layer)
-        if let layer = layer as? RotatableLayer {
+        if layer is RotatableLayer {
             // FIXME: Unsafe recovering of the reference to contentLayer.
             // RotatableLayer must have one or more layers and the first one should be PolarCoordinatedLayer.
             if let contentLayer = self.sublayers?.first as? PolarCoordinatedLayer {
