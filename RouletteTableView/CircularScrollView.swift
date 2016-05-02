@@ -8,32 +8,30 @@
 
 import UIKit
 
-func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
-    return { (input) in
-        if lower <= input && input <= upper {
-            return input
+func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (bound: Double -> Double, inverse: Double -> Double) {
+    return (
+        { (input) in
+            if lower <= input && input <= upper {
+                return input
+            }
+            if input < lower {
+                let limit = lower - margin
+                return limit + pow(margin, 2) / (lower - input + margin)
+            }
+            let limit = upper + margin
+            return limit - pow(margin, 2) / (input - upper + margin)
+        }, { (input) in
+            if lower <= input && input <= upper {
+                return input
+            }
+            if input < lower {
+                let limit = lower - margin
+                return lower + margin - pow(margin, 2) / (input - limit)
+            }
+            let limit = upper + margin
+            return upper - margin - pow(margin, 2) / (input - limit)
         }
-        if input < lower {
-            let limit = lower - margin
-            return limit + pow(margin, 2) / (lower - input + margin)
-        }
-        let limit = upper + margin
-        return limit - pow(margin, 2) / (input - upper + margin)
-    }
-}
-
-func makeReverseBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (Double -> Double) {
-    return { (input) in
-        if lower <= input && input <= upper {
-            return input
-        }
-        if input < lower {
-            let limit = lower - margin
-            return lower + margin - pow(margin, 2) / (input - limit)
-        }
-        let limit = upper + margin
-        return upper - margin - pow(margin, 2) / (input - limit)
-    }
+    )
 }
 
 class CircularScrollView: RotatableView {
@@ -56,18 +54,16 @@ class CircularScrollView: RotatableView {
     }
 
     private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
-    private var boundReverse = makeReverseBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
 
     var contentLength: Double = 0 {
         didSet {
             self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
-            self.boundReverse = makeReverseBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
         }
     }
 
     override var offset: Double {
         didSet {
-            self._dragOffset = self.boundReverse(offset)
+            self._dragOffset = self.bound.inverse(offset)
         }
     }
 
@@ -78,7 +74,7 @@ class CircularScrollView: RotatableView {
         }
         set {
             self._dragOffset = newValue
-            self.offset = self.bound(newValue)
+            self.offset = self.bound.bound(newValue)
         }
     }
 

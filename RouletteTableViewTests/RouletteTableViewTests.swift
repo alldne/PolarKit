@@ -48,8 +48,9 @@ class RouletteTableViewTests: XCTestCase {
 
     func testBoundFunction() {
         do {
-            let bound = makeBoundFunction(lower: 0, upper: 10, margin: 2)
-            let reverse = makeReverseBoundFunction(lower: 0, upper: 10, margin: 2)
+            let boundFunctions = makeBoundFunction(lower: 0, upper: 10, margin: 2)
+            let bound = boundFunctions.bound
+            let inverse = boundFunctions.inverse
             XCTAssert(bound(0) == 0)
             XCTAssert(bound(5) == 5)
             XCTAssert(bound(10) == 10)
@@ -60,16 +61,16 @@ class RouletteTableViewTests: XCTestCase {
             XCTAssert(bound(10*1000000) <=~ 12)
             XCTAssert(bound(-10*100000) >=~ -2)
 
-            XCTAssert(reverse(bound(0)) ==~ 0)
-            XCTAssert(reverse(bound(5)) ==~ 5)
-            XCTAssert(reverse(bound(10)) ==~ 10)
-            XCTAssert(reverse(bound(10.01)) ==~ 10.01)
-            XCTAssert(reverse(bound(10.001)) ==~ 10.001)
+            XCTAssert(inverse(bound(0)) ==~ 0)
+            XCTAssert(inverse(bound(5)) ==~ 5)
+            XCTAssert(inverse(bound(10)) ==~ 10)
+            XCTAssert(inverse(bound(10.01)) ==~ 10.01)
+            XCTAssert(inverse(bound(10.001)) ==~ 10.001)
 
             func relativeError(a a:Double, b:Double) -> Double {
                 return fabs(a - b) / (a + b)
             }
-            XCTAssert(relativeError(a: reverse(bound(10*1000000)), b: 10*1000000) < 0.00001)
+            XCTAssert(relativeError(a: inverse(bound(10*1000000)), b: 10*1000000) < 0.00001)
 
             let n = 100000
             let dx = 1.0/Double(n)
@@ -81,7 +82,7 @@ class RouletteTableViewTests: XCTestCase {
         }
 
         do {
-            let bound = makeBoundFunction(lower: -100, upper: 10, margin: 10)
+            let bound = makeBoundFunction(lower: -100, upper: 10, margin: 10).bound
             XCTAssert(bound(-100) == -100)
             XCTAssert(bound(5) == 5)
             XCTAssert(bound(10) == 10)
