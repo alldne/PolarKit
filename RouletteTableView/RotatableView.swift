@@ -26,7 +26,7 @@ class RotatableView: UIView {
         }
     }
 
-    private var contentView: UIView
+    var contentView: UIView
     override init(frame: CGRect) {
         self.contentView = UIView(frame: frame)
         super.init(frame: frame)

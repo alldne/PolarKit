@@ -37,11 +37,16 @@ func makeReverseBoundFunction(lower lower: Double, upper: Double, margin: Double
 }
 
 class CircularScrollView: RotatableView {
-    override init(frame: CGRect) {
-        self.contentView = PolarView(radius: 0, angle: 0, frame: frame)
-        super.init(frame: frame)
-        super.addSubview(self.contentView)
+    override class func layerClass() -> AnyClass {
+        return RotatableScrollLayer.self
+    }
 
+    override var layer: RotatableScrollLayer {
+        return super.layer as! RotatableScrollLayer
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         let draggingGestureRecognizer = UIPanGestureRecognizer(target: self, action: "dragging:")
         self.addGestureRecognizer(draggingGestureRecognizer)
     }
@@ -49,8 +54,6 @@ class CircularScrollView: RotatableView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-    private var contentView: PolarView
 
     private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
     private var boundReverse = makeReverseBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
@@ -62,13 +65,9 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    var contentOffset: Double {
-        get {
-            return self.offset
-        }
-        set {
-            self.offset = newValue
-            self._dragOffset = self.boundReverse(newValue)
+    override var offset: Double {
+        didSet {
+            self._dragOffset = self.boundReverse(offset)
         }
     }
 
@@ -79,17 +78,7 @@ class CircularScrollView: RotatableView {
         }
         set {
             self._dragOffset = newValue
-            self.contentOffset = self.bound(newValue)
-        }
-    }
-
-    var polarCoordinatedSubviews: [PolarCoordinated] = []
-
-    private var subviewsToShow: [PolarCoordinated] {
-        let lower = self.contentOffset
-        let upper = self.contentOffset + M_PI * 2
-        return self.polarCoordinatedSubviews.filter { (p) -> Bool in
-            return lower <= p.angle && p.angle < upper
+            self.offset = self.bound(newValue)
         }
     }
 
@@ -100,14 +89,6 @@ class CircularScrollView: RotatableView {
     }
 
     private var touchInfo: TouchInfo!
-
-    func addSubview(polarCoordinated view: PolarCoordinated) {
-        if !self.polarCoordinatedSubviews.contains(view) {
-            self.polarCoordinatedSubviews.append(view)
-        }
-
-        self.setNeedsLayout()
-    }
 
     func dragging(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
@@ -128,23 +109,15 @@ class CircularScrollView: RotatableView {
     }
 
     // MARK: UIView methods
-
-    override func addSubview(view: UIView) { }
-
     override func layoutSubviews() {
-        self.contentView.frame.size = self.frame.size
-
-        for subview in self.subviewsToShow {
-            self.contentView.addSubview(subview)
-        }
-
+        super.layoutSubviews()
+        let localCenter = self.convertPoint(self.center, fromView: self.superview)
         for subview in self.contentView.subviews {
-            if let polar = subview as? PolarCoordinated where !self.subviewsToShow.contains(polar){
-                polar.removeFromSuperview()
+            if let view  = subview as? PolarCoordinated {
+                let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
+                let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
+                view.center = CGPointMake(x, y)
             }
         }
-
-        super.layoutSubviews()
     }
-
 }

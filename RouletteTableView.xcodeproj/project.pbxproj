@@ -22,6 +22,7 @@
 		EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */; };
 		EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */; };
 		EEA098C61CCE6AA200DCDDF0 /* RotatableLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */; };
+		EEF236181CD37F0400B5E65B /* RotatableScrollLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproximateOperatorsForDouble.swift; sourceTree = "<group>"; };
 		EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometryExtensions.swift; sourceTree = "<group>"; };
 		EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableLayer.swift; sourceTree = "<group>"; };
+		EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableScrollLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */,
 				EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */,
 				EE6C8DF21CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift */,
+				EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */,
 				EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */,
 				EE03B9891CC65BBE00209793 /* ViewControllers */,
 				EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */,
@@ -237,6 +240,7 @@
 				EEA098C61CCE6AA200DCDDF0 /* RotatableLayer.swift in Sources */,
 				EE03B98D1CC65F5F00209793 /* CircularScrollView.swift in Sources */,
 				EE6C8DF31CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift in Sources */,
+				EEF236181CD37F0400B5E65B /* RotatableScrollLayer.swift in Sources */,
 				EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */,
 				EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */,
 				EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */,

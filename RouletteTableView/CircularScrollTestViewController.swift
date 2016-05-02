@@ -12,7 +12,7 @@ class CircularScrollTestViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
-        self.circularScrollView.contentOffset = 4 * M_PI * Double(sender.value)
+        self.circularScrollView.offset = 4 * M_PI * Double(sender.value)
     }
 
     var circularScrollView: CircularScrollView!
@@ -33,7 +33,7 @@ class CircularScrollTestViewController: UIViewController {
             label.textColor = UIColor(red: 1 - ratio, green: 1 - ratio, blue: ratio, alpha: 1)
             label.center = p.center
             p.addSubview(label)
-            self.circularScrollView.addSubview(polarCoordinated: p)
+            self.circularScrollView.addSubview(p)
         }
         self.container.addSubview(self.circularScrollView)
         self.circularScrollView.contentLength = contentLength
@@ -47,5 +47,8 @@ class CircularScrollTestViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.circularScrollView.frame = self.container.frame
+
+        // FIXME: This method should be called implicitly
+        self.circularScrollView.layer.updateSublayerMask()
     }
 }
