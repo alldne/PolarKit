@@ -27,17 +27,13 @@ class RotatableLayer: CALayer {
             self.updateContentLayerFitToSize(newValue.size)
         }
     }
+
     var contentLayer: PolarCoordinatedLayer = PolarCoordinatedLayer()
 
     override init() {
         super.init()
         self.addSublayer(self.contentLayer)
         self.updateContentLayerFitToSize(self.bounds.size)
-    }
-
-    private func updateContentLayerFitToSize(size: CGSize) {
-        self.contentLayer.bounds.size = size
-        self.contentLayer.position = CGPointMake(size.width/2, size.height/2)
     }
 
     override init(layer: AnyObject) {
@@ -62,5 +58,10 @@ class RotatableLayer: CALayer {
     override class func needsDisplayForKey(key: String) -> Bool {
         // TODO: Not quite clear that returning true for this method causes drawing.
         return key == "offset" || super.needsDisplayForKey(key)
+    }
+
+    private func updateContentLayerFitToSize(size: CGSize) {
+        self.contentLayer.bounds.size = size
+        self.contentLayer.position = CGPointMake(size.width/2, size.height/2)
     }
 }

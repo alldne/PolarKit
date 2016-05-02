@@ -16,13 +16,6 @@ class PolarCoordinatedLayer: CALayer {
         }
     }
 
-    override func actionForKey(event: String) -> CAAction? {
-        if event == "transform" {
-            return nil
-        }
-        return super.actionForKey(event)
-    }
-
     override init() {
         super.init()
     }
@@ -37,5 +30,12 @@ class PolarCoordinatedLayer: CALayer {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+
+    override func actionForKey(event: String) -> CAAction? {
+        if event == "transform" {
+            return nil
+        }
+        return super.actionForKey(event)
     }
 }

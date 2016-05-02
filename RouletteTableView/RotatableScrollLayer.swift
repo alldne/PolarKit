@@ -16,10 +16,14 @@ class RotatableScrollLayer: RotatableLayer {
     }
 
     var sublayersInContentView: [CALayer]? {
+        // FIXME: More safe way needed
         return self.contentLayer.sublayers?[0].sublayers
     }
 
     func makeMaskLayer(currentScrollOffset: Double, targetOffset: Double) -> CAShapeLayer? {
+        // The content of PolarCoordinatedLayer with offset 'x' could lay over range [x-π, x+π].
+        // We can ensure that the content is fully shown only if the current scroll offset is x-π.
+        // The following range [-3π, π] comes from [x-π-2π, x-π+2π]
         let diff = currentScrollOffset - targetOffset
         if diff > M_PI || diff < -3*M_PI {
             return CAShapeLayer()
@@ -27,7 +31,7 @@ class RotatableScrollLayer: RotatableLayer {
             return nil
         }
 
-        let r = CGFloat(self.bounds.size.width)
+        let r = CGFloat((self.bounds.size.width + self.bounds.size.height)/2)
         let center = CGPointMake(r, r)
 
         // -3π < diff < -π: clockwise

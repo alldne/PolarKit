@@ -1,5 +1,5 @@
 //
-//  MaskingTestViewController.swift
+//  MaskingDemoViewController.swift
 //  RouletteTableView
 //
 //  Created by Yonguk Jeong on 2016. 4. 30..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MaskingTestViewController: UIViewController {
+class MaskingDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
@@ -19,8 +19,8 @@ class MaskingTestViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let makeView = { (radius: Double, angle: Double, color: UIColor) -> PolarCoordinated in
-            let p = PolarCoordinated(radius: radius, angle: angle, frame: CGRectMake(0, 0, 100, 100))
+        let makeView = { (radius: Double, angle: Double, color: UIColor) -> PolarCoordinatedView in
+            let p = PolarCoordinatedView(radius: radius, angle: angle, frame: CGRectMake(0, 0, 100, 100))
             p.backgroundColor = color
             p.layer.opacity = 0.5
             return p

@@ -7,23 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9811CC4C2BC00209793 /* PolarView.swift */; };
+		EE03B9821CC4C2BC00209793 /* PolarCoordinatedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9811CC4C2BC00209793 /* PolarCoordinatedView.swift */; };
 		EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9831CC508CF00209793 /* RotatableView.swift */; };
-		EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */; };
-		EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */; };
+		EE03B9881CC61CD400209793 /* RotatableViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B9871CC61CD400209793 /* RotatableViewDemoViewController.swift */; };
+		EE03B98B1CC65E3700209793 /* CircularScrollViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B98A1CC65E3700209793 /* CircularScrollViewDemoViewController.swift */; };
 		EE03B98D1CC65F5F00209793 /* CircularScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */; };
 		EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */; };
 		EE1C19211CC0EB0600E6C4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */; };
 		EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */; };
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
 		EE6C8DF11CCE12CE009BDCAA /* PolarCoordinatedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */; };
-		EE6C8DF31CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C8DF21CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift */; };
 		EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */; };
 		EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */; };
 		EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */; };
 		EEA098C61CCE6AA200DCDDF0 /* RotatableLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */; };
 		EEF236181CD37F0400B5E65B /* RotatableScrollLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */; };
-		EEF2361A1CD3BE8200B5E65B /* MaskingTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF236191CD3BE8200B5E65B /* MaskingTestViewController.swift */; };
+		EEF2361A1CD3BE8200B5E65B /* MaskingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF236191CD3BE8200B5E65B /* MaskingDemoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,27 +36,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE03B9811CC4C2BC00209793 /* PolarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarView.swift; sourceTree = "<group>"; };
+		EE03B9811CC4C2BC00209793 /* PolarCoordinatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedView.swift; sourceTree = "<group>"; };
 		EE03B9831CC508CF00209793 /* RotatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableView.swift; sourceTree = "<group>"; };
-		EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewTestViewController.swift; sourceTree = "<group>"; };
-		EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollTestViewController.swift; sourceTree = "<group>"; };
-		EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollView.swift; sourceTree = "<group>"; };
+		EE03B9871CC61CD400209793 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; };
+		EE03B98A1CC65E3700209793 /* CircularScrollViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircularScrollViewDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircularScrollView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE1C19201CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1C19251CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE1C19271CC0EB0600E6C4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedLayer.swift; sourceTree = "<group>"; };
-		EE6C8DF21CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedScrollLayer.swift; sourceTree = "<group>"; };
+		EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PolarCoordinatedLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouletteTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteTableViewTests.swift; sourceTree = "<group>"; };
 		EE9D2AD61CC766F800C943DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproximateOperatorsForDouble.swift; sourceTree = "<group>"; };
 		EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometryExtensions.swift; sourceTree = "<group>"; };
-		EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableLayer.swift; sourceTree = "<group>"; };
-		EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableScrollLayer.swift; sourceTree = "<group>"; };
-		EEF236191CD3BE8200B5E65B /* MaskingTestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskingTestViewController.swift; sourceTree = "<group>"; };
+		EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableScrollLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EEF236191CD3BE8200B5E65B /* MaskingDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MaskingDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +79,9 @@
 		EE03B9891CC65BBE00209793 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				EE03B9871CC61CD400209793 /* RotatableViewTestViewController.swift */,
-				EE03B98A1CC65E3700209793 /* CircularScrollTestViewController.swift */,
-				EEF236191CD3BE8200B5E65B /* MaskingTestViewController.swift */,
+				EE03B9871CC61CD400209793 /* RotatableViewDemoViewController.swift */,
+				EE03B98A1CC65E3700209793 /* CircularScrollViewDemoViewController.swift */,
+				EEF236191CD3BE8200B5E65B /* MaskingDemoViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -110,21 +108,36 @@
 			isa = PBXGroup;
 			children = (
 				EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */,
-				EE03B9811CC4C2BC00209793 /* PolarView.swift */,
-				EE03B9831CC508CF00209793 /* RotatableView.swift */,
-				EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */,
-				EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */,
-				EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */,
-				EE6C8DF21CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift */,
-				EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */,
-				EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */,
+				EE7E81841CD77D720030EEED /* Views */,
+				EE7E81831CD77CCC0030EEED /* Layers */,
 				EE03B9891CC65BBE00209793 /* ViewControllers */,
+				EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */,
 				EE1C191F1CC0EB0600E6C4CC /* Main.storyboard */,
 				EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */,
 				EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */,
 				EE1C19271CC0EB0600E6C4CC /* Info.plist */,
 			);
 			path = RouletteTableView;
+			sourceTree = "<group>";
+		};
+		EE7E81831CD77CCC0030EEED /* Layers */ = {
+			isa = PBXGroup;
+			children = (
+				EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */,
+				EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */,
+				EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */,
+			);
+			name = Layers;
+			sourceTree = "<group>";
+		};
+		EE7E81841CD77D720030EEED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE03B9811CC4C2BC00209793 /* PolarCoordinatedView.swift */,
+				EE03B9831CC508CF00209793 /* RotatableView.swift */,
+				EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		EE9D2AD31CC766F800C943DB /* RouletteTableViewTests */ = {
@@ -239,14 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE6C8DF11CCE12CE009BDCAA /* PolarCoordinatedLayer.swift in Sources */,
-				EE03B9821CC4C2BC00209793 /* PolarView.swift in Sources */,
+				EE03B9821CC4C2BC00209793 /* PolarCoordinatedView.swift in Sources */,
 				EEA098C61CCE6AA200DCDDF0 /* RotatableLayer.swift in Sources */,
 				EE03B98D1CC65F5F00209793 /* CircularScrollView.swift in Sources */,
-				EE6C8DF31CCE13E3009BDCAA /* PolarCoordinatedScrollLayer.swift in Sources */,
 				EEF236181CD37F0400B5E65B /* RotatableScrollLayer.swift in Sources */,
-				EE03B98B1CC65E3700209793 /* CircularScrollTestViewController.swift in Sources */,
-				EEF2361A1CD3BE8200B5E65B /* MaskingTestViewController.swift in Sources */,
-				EE03B9881CC61CD400209793 /* RotatableViewTestViewController.swift in Sources */,
+				EE03B98B1CC65E3700209793 /* CircularScrollViewDemoViewController.swift in Sources */,
+				EEF2361A1CD3BE8200B5E65B /* MaskingDemoViewController.swift in Sources */,
+				EE03B9881CC61CD400209793 /* RotatableViewDemoViewController.swift in Sources */,
 				EE1C191C1CC0EB0600E6C4CC /* AppDelegate.swift in Sources */,
 				EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */,
 				EE03B9841CC508CF00209793 /* RotatableView.swift in Sources */,

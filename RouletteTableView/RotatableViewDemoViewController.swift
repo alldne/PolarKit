@@ -1,5 +1,5 @@
 //
-//  RotatableViewTestViewController.swift
+//  RotatableViewDemoViewController.swift
 //  RouletteTableView
 //
 //  Created by Yonguk Jeong on 2016. 4. 19..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RotatableViewTestViewController: UIViewController {
+class RotatableViewDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
@@ -17,7 +17,6 @@ class RotatableViewTestViewController: UIViewController {
 
     @IBAction func tapped(sender: AnyObject) {
         let anim = CABasicAnimation(keyPath: "offset")
-        let t = self.rotatable.offset + M_PI_2
         anim.toValue = self.rotatable.offset + M_PI_2
         self.rotatable.layer.addAnimation(anim, forKey: "myrotation")
     }

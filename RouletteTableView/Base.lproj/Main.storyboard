@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--RotatableViewTestViewController-->
+        <!--Example 1-->
         <scene sceneID="lSm-Ot-Okh">
             <objects>
-                <viewController title="RotatableViewTestViewController" id="Fvk-TG-2ZU" customClass="RotatableViewTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fvk-TG-2ZU" customClass="RotatableViewDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jed-0a-6ez"/>
                         <viewControllerLayoutGuide type="bottom" id="PW5-1M-9Ds"/>
@@ -44,7 +44,7 @@
                             <constraint firstAttribute="leadingMargin" secondItem="boV-fF-JQm" secondAttribute="leading" id="qVz-0a-xFy"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RotatableView" id="5E1-sC-ZqP"/>
+                    <tabBarItem key="tabBarItem" title="Example 1" id="5E1-sC-ZqP"/>
                     <connections>
                         <outlet property="container" destination="gsV-pV-b5L" id="AUm-Bp-uPw"/>
                     </connections>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="-502" y="1169"/>
         </scene>
-        <!--CircularScrollTestViewController-->
+        <!--Example 2-->
         <scene sceneID="K58-Kc-0N0">
             <objects>
-                <viewController title="CircularScrollTestViewController" id="KuP-YM-HPp" customClass="CircularScrollTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KuP-YM-HPp" customClass="CircularScrollViewDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LZE-v7-rmO"/>
                         <viewControllerLayoutGuide type="bottom" id="wE2-Xb-eje"/>
@@ -111,7 +111,7 @@
                             <constraint firstItem="7Ts-jI-e1w" firstAttribute="centerX" secondItem="cH2-zg-PBp" secondAttribute="centerX" id="xDj-zg-BeE"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RotatableView" id="oOZ-vW-YXd"/>
+                    <tabBarItem key="tabBarItem" title="Example 2" id="oOZ-vW-YXd"/>
                     <connections>
                         <outlet property="container" destination="7Ts-jI-e1w" id="syw-7I-lxT"/>
                     </connections>
@@ -120,10 +120,10 @@
             </objects>
             <point key="canvasLocation" x="-380" y="2181"/>
         </scene>
-        <!--MaskingTest-->
+        <!--Example 3-->
         <scene sceneID="8qf-pH-3JW">
             <objects>
-                <viewController title="MaskingTest" id="Ss2-gv-dcD" customClass="MaskingTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hrp-IM-l9g"/>
                         <viewControllerLayoutGuide type="bottom" id="6gz-L2-rSb"/>
@@ -154,7 +154,7 @@
                             <constraint firstItem="6gz-L2-rSb" firstAttribute="top" secondItem="4WO-Oe-g1w" secondAttribute="bottom" constant="8" id="tLy-Xi-her"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="RotatableView" id="J0e-If-gll"/>
+                    <tabBarItem key="tabBarItem" title="Example 3" id="J0e-If-gll"/>
                     <connections>
                         <outlet property="container" destination="o5b-cE-bJp" id="28k-fj-oW4"/>
                     </connections>

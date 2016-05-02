@@ -1,5 +1,5 @@
 //
-//  CircularScrollTestViewController.swift
+//  CircularScrollViewDemoViewController.swift
 //  RouletteTableView
 //
 //  Created by Yonguk Jeong on 2016. 4. 19..
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircularScrollTestViewController: UIViewController {
+class CircularScrollViewDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
@@ -24,7 +24,7 @@ class CircularScrollTestViewController: UIViewController {
         let contentLength = 4 * M_PI
         let ang = contentLength / Double(n)
         for i in 0..<n {
-            let p = PolarCoordinated(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 20))
+            let p = PolarCoordinatedView(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 20))
             let ratio = CGFloat(Double(i) / Double(n))
             p.backgroundColor = UIColor(red: ratio, green: ratio, blue: 1 - ratio, alpha: 1)
             let label = UILabel()

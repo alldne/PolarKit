@@ -113,7 +113,7 @@ class CircularScrollView: RotatableView {
         super.layoutSubviews()
         let localCenter = self.convertPoint(self.center, fromView: self.superview)
         for subview in self.contentView.subviews {
-            if let view  = subview as? PolarCoordinated {
+            if let view  = subview as? PolarCoordinatedView {
                 let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
                 let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
                 view.center = CGPointMake(x, y)
