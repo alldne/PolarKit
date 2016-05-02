@@ -70,6 +70,7 @@
                     <connections>
                         <segue destination="Fvk-TG-2ZU" kind="relationship" relationship="viewControllers" id="m7r-ni-d2H"/>
                         <segue destination="KuP-YM-HPp" kind="relationship" relationship="viewControllers" id="qe3-pJ-DYq"/>
+                        <segue destination="Ss2-gv-dcD" kind="relationship" relationship="viewControllers" id="9OX-Ps-wZR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u5g-6a-fu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,6 +117,49 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sk9-1I-WvV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-380" y="2181"/>
+        </scene>
+        <!--MaskingTest-->
+        <scene sceneID="8qf-pH-3JW">
+            <objects>
+                <viewController title="MaskingTest" id="Ss2-gv-dcD" customClass="MaskingTestViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hrp-IM-l9g"/>
+                        <viewControllerLayoutGuide type="bottom" id="6gz-L2-rSb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7mR-13-f9I">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o5b-cE-bJp">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="4WO-Oe-g1w">
+                                <rect key="frame" x="18" y="513" width="564" height="31"/>
+                                <connections>
+                                    <action selector="valueChanged:" destination="Ss2-gv-dcD" eventType="valueChanged" id="wff-j4-2it"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4WO-Oe-g1w" secondAttribute="trailing" id="27M-zG-uGv"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="4WO-Oe-g1w" secondAttribute="leading" id="LHc-Cc-CXZ"/>
+                            <constraint firstItem="o5b-cE-bJp" firstAttribute="width" secondItem="7mR-13-f9I" secondAttribute="width" id="iun-aj-jCb"/>
+                            <constraint firstItem="4WO-Oe-g1w" firstAttribute="top" secondItem="o5b-cE-bJp" secondAttribute="bottom" constant="16" id="mIK-tw-jxv"/>
+                            <constraint firstItem="o5b-cE-bJp" firstAttribute="top" secondItem="hrp-IM-l9g" secondAttribute="bottom" constant="-20" id="oVj-IW-LVE"/>
+                            <constraint firstItem="o5b-cE-bJp" firstAttribute="centerX" secondItem="7mR-13-f9I" secondAttribute="centerX" id="pDz-or-klS"/>
+                            <constraint firstItem="6gz-L2-rSb" firstAttribute="top" secondItem="4WO-Oe-g1w" secondAttribute="bottom" constant="8" id="tLy-Xi-her"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="RotatableView" id="J0e-If-gll"/>
+                    <connections>
+                        <outlet property="container" destination="o5b-cE-bJp" id="28k-fj-oW4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pp8-8o-2Ou" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="652" y="2101"/>
         </scene>
