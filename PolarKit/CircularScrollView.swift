@@ -1,6 +1,6 @@
 //
 //  CircularScrollView.swift
-//  RouletteTableView
+//  PolarKit
 //
 //  Created by Yonguk Jeong on 2016. 4. 19..
 //  Copyright © 2016년 Yonguk Jeong. All rights reserved.

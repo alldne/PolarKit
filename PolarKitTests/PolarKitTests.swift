@@ -1,15 +1,15 @@
 //
-//  RouletteTableViewTests.swift
-//  RouletteTableViewTests
+//  PolarKitTests.swift
+//  PolarKitTests
 //
 //  Created by Yonguk Jeong on 2016. 4. 20..
 //  Copyright © 2016년 Yonguk Jeong. All rights reserved.
 //
 
 import XCTest
-@testable import RouletteTableView
+@testable import PolarKit
 
-class RouletteTableViewTests: XCTestCase {
+class PolarKitTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

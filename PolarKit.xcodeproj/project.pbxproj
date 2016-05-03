@@ -17,7 +17,7 @@
 		EE1C19231CC0EB0600E6C4CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */; };
 		EE1C19261CC0EB0600E6C4CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */; };
 		EE6C8DF11CCE12CE009BDCAA /* PolarCoordinatedLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */; };
-		EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */; };
+		EE9D2AD51CC766F800C943DB /* PolarKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AD41CC766F800C943DB /* PolarKitTests.swift */; };
 		EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */; };
 		EE9D2AE11CC9DEE700C943DB /* CGGeometryExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */; };
 		EEA098C61CCE6AA200DCDDF0 /* RotatableLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */; };
@@ -31,28 +31,28 @@
 			containerPortal = EE1C19101CC0EB0600E6C4CC /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EE1C19171CC0EB0600E6C4CC;
-			remoteInfo = RouletteTableView;
+			remoteInfo = PolarKit;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EE03B9811CC4C2BC00209793 /* PolarCoordinatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedView.swift; sourceTree = "<group>"; };
-		EE03B9831CC508CF00209793 /* RotatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableView.swift; sourceTree = "<group>"; };
-		EE03B9871CC61CD400209793 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; };
+		EE03B9811CC4C2BC00209793 /* PolarCoordinatedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PolarCoordinatedView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EE03B9831CC508CF00209793 /* RotatableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		EE03B9871CC61CD400209793 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE03B98A1CC65E3700209793 /* CircularScrollViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircularScrollViewDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE03B98C1CC65F5F00209793 /* CircularScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircularScrollView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RouletteTableView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EE1C19181CC0EB0600E6C4CC /* PolarKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PolarKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AppDelegate.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE1C19201CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE1C19221CC0EB0600E6C4CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE1C19251CC0EB0600E6C4CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE1C19271CC0EB0600E6C4CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE6C8DF01CCE12CE009BDCAA /* PolarCoordinatedLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PolarCoordinatedLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RouletteTableViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteTableViewTests.swift; sourceTree = "<group>"; };
+		EE9D2AD21CC766F800C943DB /* PolarKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PolarKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE9D2AD41CC766F800C943DB /* PolarKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PolarKitTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE9D2AD61CC766F800C943DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApproximateOperatorsForDouble.swift; sourceTree = "<group>"; };
-		EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGGeometryExtensions.swift; sourceTree = "<group>"; };
+		EE9D2AE01CC9DEE700C943DB /* CGGeometryExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CGGeometryExtensions.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EEA098C51CCE6AA200DCDDF0 /* RotatableLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EEF236171CD37F0400B5E65B /* RotatableScrollLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableScrollLayer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EEF236191CD3BE8200B5E65B /* MaskingDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MaskingDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -89,8 +89,8 @@
 		EE1C190F1CC0EB0600E6C4CC = {
 			isa = PBXGroup;
 			children = (
-				EE1C191A1CC0EB0600E6C4CC /* RouletteTableView */,
-				EE9D2AD31CC766F800C943DB /* RouletteTableViewTests */,
+				EE1C191A1CC0EB0600E6C4CC /* PolarKit */,
+				EE9D2AD31CC766F800C943DB /* PolarKitTests */,
 				EE1C19191CC0EB0600E6C4CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,13 +98,13 @@
 		EE1C19191CC0EB0600E6C4CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */,
-				EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */,
+				EE1C19181CC0EB0600E6C4CC /* PolarKit.app */,
+				EE9D2AD21CC766F800C943DB /* PolarKitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE1C191A1CC0EB0600E6C4CC /* RouletteTableView */ = {
+		EE1C191A1CC0EB0600E6C4CC /* PolarKit */ = {
 			isa = PBXGroup;
 			children = (
 				EE1C191B1CC0EB0600E6C4CC /* AppDelegate.swift */,
@@ -117,7 +117,7 @@
 				EE1C19241CC0EB0600E6C4CC /* LaunchScreen.storyboard */,
 				EE1C19271CC0EB0600E6C4CC /* Info.plist */,
 			);
-			path = RouletteTableView;
+			path = PolarKit;
 			sourceTree = "<group>";
 		};
 		EE7E81831CD77CCC0030EEED /* Layers */ = {
@@ -140,22 +140,22 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
-		EE9D2AD31CC766F800C943DB /* RouletteTableViewTests */ = {
+		EE9D2AD31CC766F800C943DB /* PolarKitTests */ = {
 			isa = PBXGroup;
 			children = (
-				EE9D2AD41CC766F800C943DB /* RouletteTableViewTests.swift */,
+				EE9D2AD41CC766F800C943DB /* PolarKitTests.swift */,
 				EE9D2ADC1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift */,
 				EE9D2AD61CC766F800C943DB /* Info.plist */,
 			);
-			path = RouletteTableViewTests;
+			path = PolarKitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE1C19171CC0EB0600E6C4CC /* RouletteTableView */ = {
+		EE1C19171CC0EB0600E6C4CC /* PolarKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE1C192A1CC0EB0600E6C4CC /* Build configuration list for PBXNativeTarget "RouletteTableView" */;
+			buildConfigurationList = EE1C192A1CC0EB0600E6C4CC /* Build configuration list for PBXNativeTarget "PolarKit" */;
 			buildPhases = (
 				EE1C19141CC0EB0600E6C4CC /* Sources */,
 				EE1C19151CC0EB0600E6C4CC /* Frameworks */,
@@ -165,14 +165,14 @@
 			);
 			dependencies = (
 			);
-			name = RouletteTableView;
-			productName = RouletteTableView;
-			productReference = EE1C19181CC0EB0600E6C4CC /* RouletteTableView.app */;
+			name = PolarKit;
+			productName = PolarKit;
+			productReference = EE1C19181CC0EB0600E6C4CC /* PolarKit.app */;
 			productType = "com.apple.product-type.application";
 		};
-		EE9D2AD11CC766F800C943DB /* RouletteTableViewTests */ = {
+		EE9D2AD11CC766F800C943DB /* PolarKitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "RouletteTableViewTests" */;
+			buildConfigurationList = EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "PolarKitTests" */;
 			buildPhases = (
 				EE9D2ACE1CC766F800C943DB /* Sources */,
 				EE9D2ACF1CC766F800C943DB /* Frameworks */,
@@ -183,9 +183,9 @@
 			dependencies = (
 				EE9D2AD81CC766F800C943DB /* PBXTargetDependency */,
 			);
-			name = RouletteTableViewTests;
-			productName = RouletteTableViewTests;
-			productReference = EE9D2AD21CC766F800C943DB /* RouletteTableViewTests.xctest */;
+			name = PolarKitTests;
+			productName = PolarKitTests;
+			productReference = EE9D2AD21CC766F800C943DB /* PolarKitTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -207,7 +207,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EE1C19131CC0EB0600E6C4CC /* Build configuration list for PBXProject "RouletteTableView" */;
+			buildConfigurationList = EE1C19131CC0EB0600E6C4CC /* Build configuration list for PBXProject "PolarKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -220,8 +220,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE1C19171CC0EB0600E6C4CC /* RouletteTableView */,
-				EE9D2AD11CC766F800C943DB /* RouletteTableViewTests */,
+				EE1C19171CC0EB0600E6C4CC /* PolarKit */,
+				EE9D2AD11CC766F800C943DB /* PolarKitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -269,7 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE9D2AD51CC766F800C943DB /* RouletteTableViewTests.swift in Sources */,
+				EE9D2AD51CC766F800C943DB /* PolarKitTests.swift in Sources */,
 				EE9D2ADD1CC7A47D00C943DB /* ApproximateOperatorsForDouble.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +279,7 @@
 /* Begin PBXTargetDependency section */
 		EE9D2AD81CC766F800C943DB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EE1C19171CC0EB0600E6C4CC /* RouletteTableView */;
+			target = EE1C19171CC0EB0600E6C4CC /* PolarKit */;
 			targetProxy = EE9D2AD71CC766F800C943DB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,9 +389,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RouletteTableView/Info.plist;
+				INFOPLIST_FILE = PolarKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.PolarKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -400,9 +400,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = RouletteTableView/Info.plist;
+				INFOPLIST_FILE = PolarKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableView;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.PolarKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -411,11 +411,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RouletteTableViewTests/Info.plist;
+				INFOPLIST_FILE = PolarKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.PolarKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RouletteTableView.app/RouletteTableView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarKit.app/PolarKit";
 			};
 			name = Debug;
 		};
@@ -423,18 +423,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				INFOPLIST_FILE = RouletteTableViewTests/Info.plist;
+				INFOPLIST_FILE = PolarKitTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yong.RouletteTableViewTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yong.PolarKitTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RouletteTableView.app/RouletteTableView";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PolarKit.app/PolarKit";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE1C19131CC0EB0600E6C4CC /* Build configuration list for PBXProject "RouletteTableView" */ = {
+		EE1C19131CC0EB0600E6C4CC /* Build configuration list for PBXProject "PolarKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE1C19281CC0EB0600E6C4CC /* Debug */,
@@ -443,7 +443,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE1C192A1CC0EB0600E6C4CC /* Build configuration list for PBXNativeTarget "RouletteTableView" */ = {
+		EE1C192A1CC0EB0600E6C4CC /* Build configuration list for PBXNativeTarget "PolarKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE1C192B1CC0EB0600E6C4CC /* Debug */,
@@ -452,7 +452,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "RouletteTableViewTests" */ = {
+		EE9D2ADB1CC766F800C943DB /* Build configuration list for PBXNativeTarget "PolarKitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE9D2AD91CC766F800C943DB /* Debug */,

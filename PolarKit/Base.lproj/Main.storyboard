@@ -9,7 +9,7 @@
         <!--Example 1-->
         <scene sceneID="lSm-Ot-Okh">
             <objects>
-                <viewController id="Fvk-TG-2ZU" customClass="RotatableViewDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fvk-TG-2ZU" customClass="RotatableViewDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jed-0a-6ez"/>
                         <viewControllerLayoutGuide type="bottom" id="PW5-1M-9Ds"/>
@@ -80,7 +80,7 @@
         <!--Example 2-->
         <scene sceneID="K58-Kc-0N0">
             <objects>
-                <viewController id="KuP-YM-HPp" customClass="CircularScrollViewDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KuP-YM-HPp" customClass="CircularScrollViewDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LZE-v7-rmO"/>
                         <viewControllerLayoutGuide type="bottom" id="wE2-Xb-eje"/>
@@ -123,7 +123,7 @@
         <!--Example 3-->
         <scene sceneID="8qf-pH-3JW">
             <objects>
-                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="RouletteTableView" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hrp-IM-l9g"/>
                         <viewControllerLayoutGuide type="bottom" id="6gz-L2-rSb"/>
