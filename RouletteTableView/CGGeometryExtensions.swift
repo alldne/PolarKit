@@ -12,6 +12,10 @@ func - (a: CGPoint, b: CGPoint) -> CGVector {
     return CGVectorMake(a.x - b.x, a.y - b.y)
 }
 
+func * (a: CGVector, f: CGFloat) -> CGVector {
+    return CGVectorMake(a.dx*f, a.dy*f)
+}
+
 let PIx2 = 2 * M_PI
 extension CGVector {
     var length: CGFloat {
@@ -52,5 +56,11 @@ extension CGVector {
             return hint - alpha + angle - PIx2
         }
         return hint - alpha + angle
+    }
+}
+
+extension CGPoint {
+    var length: CGFloat {
+        return sqrt(pow(self.x, 2) + pow(self.y, 2))
     }
 }

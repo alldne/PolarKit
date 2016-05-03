@@ -34,6 +34,27 @@ func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (b
     )
 }
 
+func getTangentialVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoint) -> CGVector {
+    let r = point - center
+    let v = CGVectorMake(velocity.x, velocity.y)
+
+    let length = (r.dx*v.dy - r.dy*v.dx) / r.length
+    let tangentialUnit = CGVectorMake(-r.dy/r.length, r.dx/r.length)
+    return tangentialUnit * length
+}
+
+func getAngularVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoint) -> Double {
+    let t = getTangentialVelocity(center: center, point: point, velocity: velocity)
+    if t.length == 0 {
+        return 0
+    }
+    let r = point - center
+    if r.dx*t.dy - r.dy*t.dx > 0 {
+        return (t.length / point.length).native
+    }
+    return (-t.length / point.length).native
+}
+
 class CircularScrollView: RotatableView {
     override class func layerClass() -> AnyClass {
         return RotatableScrollLayer.self
@@ -62,6 +83,11 @@ class CircularScrollView: RotatableView {
     }
 
     override var offset: Double {
+        willSet {
+            if self.layer.animationForKey(CircularScrollView.kAnimationKey) != nil {
+                self.cancelAnimation()
+            }
+        }
         didSet {
             self._dragOffset = self.bound.inverse(offset)
         }
@@ -86,9 +112,14 @@ class CircularScrollView: RotatableView {
 
     private var touchInfo: TouchInfo!
 
+    static let kInertiaThreshhold = 0.8
+    static let kInertiaAnimationDuration = 2.5
+    static let kAnimationKey = "scroll-to-offset"
+
     func dragging(recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
         case .Began:
+            self._dragOffset = self.bound.inverse(offset)
             let initialPoint = recognizer.locationInView(self) - self.center
             self.touchInfo = TouchInfo(initialPoint: initialPoint, initialDragOffset: self.dragOffset, offsetFromInitialPoint: 0)
         case .Changed:
@@ -97,11 +128,42 @@ class CircularScrollView: RotatableView {
             self.dragOffset = self.touchInfo.initialDragOffset + self.touchInfo.offsetFromInitialPoint
         case .Ended:
             self.touchInfo = nil
+            if self.offset < 0 {
+                self.scrollToOffset(0, animate: true)
+            } else if self.offset > self.contentLength {
+                self.scrollToOffset(self.contentLength, animate: true)
+            } else {
+                let w = getAngularVelocity(center: self.center, point: recognizer.locationInView(self), velocity: recognizer.velocityInView(self))
+                if abs(w) > CircularScrollView.kInertiaThreshhold {
+                    let t = CircularScrollView.kInertiaAnimationDuration
+                    let endPoint = self.offset - w*t - 0.5*(-w)*t
+                    self.scrollToOffset(endPoint, animate: true)
+                }
+            }
         case .Cancelled:
             self.touchInfo = nil
         default:
             break
         }
+    }
+
+    func scrollToOffset(offset: Double, animate: Bool) {
+        var offsetInRange = offset
+        if offset < 0 {
+            offsetInRange = 0
+        } else if offset > self.contentLength {
+            offsetInRange = self.contentLength
+        }
+
+        let anim = CABasicAnimation(keyPath: "offset")
+        anim.toValue = offsetInRange
+        anim.duration = CircularScrollView.kInertiaAnimationDuration
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        self.layer.addAnimation(anim, forKey: CircularScrollView.kAnimationKey)
+    }
+
+    func cancelAnimation() {
+        self.layer.removeAnimationForKey(CircularScrollView.kAnimationKey)
     }
 
     // MARK: UIView methods
