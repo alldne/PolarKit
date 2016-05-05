@@ -66,7 +66,7 @@ public class CircularScrollView: RotatableView {
 
     override public init(frame: CGRect) {
         super.init(frame: frame)
-        let draggingGestureRecognizer = UIPanGestureRecognizer(target: self, action: "dragging:")
+        let draggingGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(CircularScrollView.dragging(_:)))
         self.addGestureRecognizer(draggingGestureRecognizer)
     }
 
