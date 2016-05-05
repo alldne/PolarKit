@@ -8,8 +8,8 @@
 
 import UIKit
 
-class RotatableScrollLayer: RotatableLayer {
-    override var offset: Double {
+public class RotatableScrollLayer: RotatableLayer {
+    override public var offset: Double {
         didSet {
             self.updateSublayerMask()
         }
@@ -52,7 +52,7 @@ class RotatableScrollLayer: RotatableLayer {
         return layer
     }
 
-    func updateSublayerMask() {
+    public func updateSublayerMask() {
         // FIXME: Dear me,
         // This method modifies sublayers. And init(layer: AnyObject) does not do a deep copy of its sublayers.
         // So calling this method during the animation eventually changes the modelLayer, not the presentationLayer. It's not nice but intended.

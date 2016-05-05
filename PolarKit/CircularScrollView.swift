@@ -55,34 +55,34 @@ func getAngularVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoin
     return (-t.length / point.length).native
 }
 
-class CircularScrollView: RotatableView {
-    override class func layerClass() -> AnyClass {
+public class CircularScrollView: RotatableView {
+    override public class func layerClass() -> AnyClass {
         return RotatableScrollLayer.self
     }
 
-    override var layer: RotatableScrollLayer {
+    override public var layer: RotatableScrollLayer {
         return super.layer as! RotatableScrollLayer
     }
 
-    override init(frame: CGRect) {
+    override public init(frame: CGRect) {
         super.init(frame: frame)
         let draggingGestureRecognizer = UIPanGestureRecognizer(target: self, action: "dragging:")
         self.addGestureRecognizer(draggingGestureRecognizer)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
 
-    var contentLength: Double = 0 {
+    public var contentLength: Double = 0 {
         didSet {
             self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
         }
     }
 
-    override var offset: Double {
+    override public var offset: Double {
         willSet {
             if self.layer.animationForKey(CircularScrollView.kAnimationKey) != nil {
                 self.cancelAnimation()
@@ -147,7 +147,7 @@ class CircularScrollView: RotatableView {
         }
     }
 
-    func scrollToOffset(offset: Double, animate: Bool) {
+    public func scrollToOffset(offset: Double, animate: Bool) {
         var offsetInRange = offset
         if offset < 0 {
             offsetInRange = 0
@@ -162,12 +162,12 @@ class CircularScrollView: RotatableView {
         self.layer.addAnimation(anim, forKey: CircularScrollView.kAnimationKey)
     }
 
-    func cancelAnimation() {
+    public func cancelAnimation() {
         self.layer.removeAnimationForKey(CircularScrollView.kAnimationKey)
     }
 
     // MARK: UIView methods
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         let localCenter = self.convertPoint(self.center, fromView: self.superview)
         for subview in self.contentView.subviews {

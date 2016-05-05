@@ -8,19 +8,20 @@
 
 import UIKit
 
-class PolarCoordinatedLayer: CALayer {
-    var radius: Double = 0
-    var angle: Double = 0 {
+public class PolarCoordinatedLayer: CALayer {
+    public var radius: Double = 0
+    public var angle: Double = 0 {
         didSet {
             self.transform = CATransform3DRotate(CATransform3DIdentity, CGFloat(angle), 0.0, 0.0, 1.0)
         }
+
     }
 
-    override init() {
+    override public init() {
         super.init()
     }
 
-    override init(layer: AnyObject) {
+    override public init(layer: AnyObject) {
         super.init(layer: layer)
         if let layer = layer as? PolarCoordinatedLayer {
             self.radius = layer.radius
@@ -28,11 +29,11 @@ class PolarCoordinatedLayer: CALayer {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override func actionForKey(event: String) -> CAAction? {
+    override public func actionForKey(event: String) -> CAAction? {
         if event == "transform" {
             return nil
         }
