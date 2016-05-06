@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PolarKit
 
 class RotatableViewDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!

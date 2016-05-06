@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'PolarKit_Example', :exclusive => true do
+  pod 'PolarKit', :path => '../'
+end
+
+target 'PolarKit_Tests', :exclusive => true do
+  pod 'PolarKit', :path => '../'
+
+  pod 'Quick', '~> 0.8'
+  pod 'Nimble', '~> 3.0'
+  pod 'FBSnapshotTestCase'
+  pod 'Nimble-Snapshots'
+end

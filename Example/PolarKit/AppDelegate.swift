@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  PolarKit
 //
-//  Created by Yonguk Jeong on 2016. 4. 15..
-//  Copyright © 2016년 Yonguk Jeong. All rights reserved.
+//  Created by Jeong Yong-uk on 05/04/2016.
+//  Copyright (c) 2016 Jeong Yong-uk. All rights reserved.
 //
 
 import UIKit

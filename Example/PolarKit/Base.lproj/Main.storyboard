@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AlH-2X-bKo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AlH-2X-bKo">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Example 1-->
         <scene sceneID="lSm-Ot-Okh">
             <objects>
-                <viewController id="Fvk-TG-2ZU" customClass="RotatableViewDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Fvk-TG-2ZU" customClass="RotatableViewDemoViewController" customModule="PolarKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Jed-0a-6ez"/>
                         <viewControllerLayoutGuide type="bottom" id="PW5-1M-9Ds"/>
@@ -80,7 +80,7 @@
         <!--Example 2-->
         <scene sceneID="K58-Kc-0N0">
             <objects>
-                <viewController id="KuP-YM-HPp" customClass="CircularScrollViewDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KuP-YM-HPp" customClass="CircularScrollViewDemoViewController" customModule="PolarKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LZE-v7-rmO"/>
                         <viewControllerLayoutGuide type="bottom" id="wE2-Xb-eje"/>
@@ -123,7 +123,7 @@
         <!--Example 3-->
         <scene sceneID="8qf-pH-3JW">
             <objects>
-                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="PolarKit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="PolarKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hrp-IM-l9g"/>
                         <viewControllerLayoutGuide type="bottom" id="6gz-L2-rSb"/>

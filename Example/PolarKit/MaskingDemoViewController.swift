@@ -1,40 +1,45 @@
 //
-//  CircularScrollViewDemoViewController.swift
+//  MaskingDemoViewController.swift
 //  PolarKit
 //
-//  Created by Yonguk Jeong on 2016. 4. 19..
+//  Created by Yonguk Jeong on 2016. 4. 30..
 //  Copyright © 2016년 Yonguk Jeong. All rights reserved.
 //
 
 import UIKit
+import PolarKit
 
-class CircularScrollViewDemoViewController: UIViewController {
+class MaskingDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
-        self.circularScrollView.offset = 4 * M_PI * Double(sender.value)
+        self.circularScrollView.offset = self.circularScrollView.contentLength * Double(sender.value)
     }
 
     var circularScrollView: CircularScrollView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        let makeView = { (radius: Double, angle: Double, color: UIColor) -> PolarCoordinatedView in
+            let p = PolarCoordinatedView(radius: radius, angle: angle, frame: CGRectMake(0, 0, 100, 100))
+            p.backgroundColor = color
+            p.layer.opacity = 0.5
+            return p
+        }
+
         self.circularScrollView = CircularScrollView(frame: CGRectZero)
 
         let n = 24
         let contentLength = 4 * M_PI
         let ang = contentLength / Double(n)
-        for i in 0..<n {
-            let p = PolarCoordinatedView(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 20))
+        let r = 200 / Double(n)
+        for i in 0...n {
             let ratio = CGFloat(Double(i) / Double(n))
-            p.backgroundColor = UIColor(red: ratio, green: ratio, blue: 1 - ratio, alpha: 1)
-            let label = UILabel()
-            label.text = "\(i)"
-            label.sizeToFit()
-            label.textColor = UIColor(red: 1 - ratio, green: 1 - ratio, blue: ratio, alpha: 1)
-            label.center = p.center
-            p.addSubview(label)
+            let color = UIColor(red: ratio, green: ratio, blue: 1 - ratio, alpha: 1)
+            let p = makeView(r * Double(i), ang * Double(i), color)
             self.circularScrollView.addSubview(p)
         }
+
         self.container.addSubview(self.circularScrollView)
         self.circularScrollView.contentLength = contentLength
     }
@@ -43,7 +48,7 @@ class CircularScrollViewDemoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.circularScrollView.frame = self.container.frame
