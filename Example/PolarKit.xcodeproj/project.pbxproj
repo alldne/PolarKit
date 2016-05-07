@@ -14,9 +14,12 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		85D23425441EBFDB2362636A /* Pods_PolarKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D491E54EB33B3BA6357F68B /* Pods_PolarKit_Example.framework */; };
+		EE00FA641CDDB55C00411479 /* RotatableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */; };
+		EE00FA661CDDBED300411479 /* CircularScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */; };
 		EE0677361CDC3F260062D258 /* CircularScrollViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */; };
 		EE0677371CDC3F260062D258 /* MaskingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677341CDC3F260062D258 /* MaskingDemoViewController.swift */; };
 		EE0677381CDC3F260062D258 /* RotatableViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */; };
+		EEFA8CB71CDCFECA00DE823F /* PolarCoordinatedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,9 +50,12 @@
 		6D491E54EB33B3BA6357F68B /* Pods_PolarKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PolarKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85B3A8933678558272E8341D /* PolarKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = PolarKit.podspec; path = ../PolarKit.podspec; sourceTree = "<group>"; };
 		A3A7FC0BAA2ABBF91232D1E6 /* Pods-PolarKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarKit_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PolarKit_Example/Pods-PolarKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewTests.swift; sourceTree = "<group>"; };
+		EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollViewTests.swift; sourceTree = "<group>"; };
 		EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollViewDemoViewController.swift; sourceTree = "<group>"; };
 		EE0677341CDC3F260062D258 /* MaskingDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskingDemoViewController.swift; sourceTree = "<group>"; };
 		EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; };
+		EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedViewTests.swift; sourceTree = "<group>"; };
 		F9749F9A650C7B28C6DDF986 /* Pods-PolarKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PolarKit_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-PolarKit_Example/Pods-PolarKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */,
+				EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */,
+				EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -376,6 +385,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEFA8CB71CDCFECA00DE823F /* PolarCoordinatedViewTests.swift in Sources */,
+				EE00FA641CDDB55C00411479 /* RotatableViewTests.swift in Sources */,
+				EE00FA661CDDBED300411479 /* CircularScrollViewTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
