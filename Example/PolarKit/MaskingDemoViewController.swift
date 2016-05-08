@@ -53,7 +53,5 @@ class MaskingDemoViewController: UIViewController {
         super.viewDidLayoutSubviews()
         self.circularScrollView.frame = self.container.frame
 
-        // FIXME: This method should be called implicitly
-        self.circularScrollView.layer.updateSublayerMask()
     }
 }

@@ -178,4 +178,9 @@ public class CircularScrollView: RotatableView {
             }
         }
     }
+
+    override public func addSubview(view: UIView) {
+        super.addSubview(view)
+        self.layer.updateSublayerMask()
+    }
 }

@@ -15,6 +15,12 @@ public class RotatableScrollLayer: RotatableLayer {
         }
     }
 
+    override public var bounds: CGRect {
+        didSet {
+            self.updateSublayerMask()
+        }
+    }
+
     var sublayersInContentView: [CALayer]? {
         // FIXME: More safe way needed
         return self.contentLayer.sublayers?[0].sublayers
@@ -52,7 +58,7 @@ public class RotatableScrollLayer: RotatableLayer {
         return layer
     }
 
-    public func updateSublayerMask() {
+    func updateSublayerMask() {
         // FIXME: Dear me,
         // This method modifies sublayers. And init(layer: AnyObject) does not do a deep copy of its sublayers.
         // So calling this method during the animation eventually changes the modelLayer, not the presentationLayer. It's not nice but intended.
