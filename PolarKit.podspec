@@ -11,4 +11,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'PolarKit/Classes/**/*'
+  s.pod_target_xcconfig = { 'ENABLE_TESTABILITY' => 'YES' }
 end

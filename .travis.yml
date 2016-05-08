@@ -3,3 +3,8 @@ language: objective-c
 xcode_workspace: Example/PolarKit.xcworkspace
 xcode_scheme: PolarKit-Example
 xcode_sdk: iphonesimulator
+podfile: Example/Podfile
+
+script:
+- set -o pipefail && xcodebuild test -workspace Example/PolarKit.xcworkspace -scheme PolarKit-Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 6s Plus,OS=9.3' | xcpretty
+- pod lib lint
