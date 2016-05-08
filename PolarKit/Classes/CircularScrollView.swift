@@ -50,9 +50,9 @@ func getAngularVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoin
     }
     let r = point - center
     if r.dx*t.dy - r.dy*t.dx > 0 {
-        return (t.length / point.length).native
+        return Double(t.length / point.length)
     }
-    return (-t.length / point.length).native
+    return Double(-t.length / point.length)
 }
 
 public class CircularScrollView: RotatableView {

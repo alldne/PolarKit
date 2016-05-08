@@ -41,9 +41,9 @@ extension CGVector {
         let rad = acos(cosTheta)
 
         if self.dx*v.dy - self.dy*v.dx < 0 {
-            return -rad.native
+            return Double(-rad)
         }
-        return rad.native
+        return Double(rad)
     }
 
     func getNearbyAngle(v: CGVector, hint: Double) -> Double {
