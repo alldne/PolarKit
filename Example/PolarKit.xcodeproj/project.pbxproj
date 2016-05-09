@@ -17,7 +17,7 @@
 		EE00FA641CDDB55C00411479 /* RotatableViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */; };
 		EE00FA661CDDBED300411479 /* CircularScrollViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */; };
 		EE0677361CDC3F260062D258 /* CircularScrollViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */; };
-		EE0677371CDC3F260062D258 /* MaskingDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677341CDC3F260062D258 /* MaskingDemoViewController.swift */; };
+		EE0677371CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677341CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift */; };
 		EE0677381CDC3F260062D258 /* RotatableViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */; };
 		EE36D6A91CE04F7E00238939 /* uatt.png in Resources */ = {isa = PBXBuildFile; fileRef = EE36D6A81CE04F7E00238939 /* uatt.png */; };
 		EEFA8CB71CDCFECA00DE823F /* PolarCoordinatedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */; };
@@ -54,7 +54,7 @@
 		EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewTests.swift; sourceTree = "<group>"; };
 		EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollViewTests.swift; sourceTree = "<group>"; };
 		EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollViewDemoViewController.swift; sourceTree = "<group>"; };
-		EE0677341CDC3F260062D258 /* MaskingDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskingDemoViewController.swift; sourceTree = "<group>"; };
+		EE0677341CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularScrollViewDemo2ViewController.swift; sourceTree = "<group>"; };
 		EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; };
 		EE36D6A81CE04F7E00238939 /* uatt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uatt.png; sourceTree = "<group>"; };
 		EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PolarCoordinatedViewTests.swift; sourceTree = "<group>"; };
@@ -125,9 +125,9 @@
 		607FACD21AFB9204008FA782 /* Example for PolarKit */ = {
 			isa = PBXGroup;
 			children = (
-				EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */,
-				EE0677341CDC3F260062D258 /* MaskingDemoViewController.swift */,
 				EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */,
+				EE0677331CDC3F260062D258 /* CircularScrollViewDemoViewController.swift */,
+				EE0677341CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				EE36D6A81CE04F7E00238939 /* uatt.png */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -379,7 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE0677381CDC3F260062D258 /* RotatableViewDemoViewController.swift in Sources */,
-				EE0677371CDC3F260062D258 /* MaskingDemoViewController.swift in Sources */,
+				EE0677371CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 				EE0677361CDC3F260062D258 /* CircularScrollViewDemoViewController.swift in Sources */,
 			);

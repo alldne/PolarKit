@@ -141,7 +141,7 @@
         <!--Example 3-->
         <scene sceneID="8qf-pH-3JW">
             <objects>
-                <viewController id="Ss2-gv-dcD" customClass="MaskingDemoViewController" customModule="PolarKit_Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ss2-gv-dcD" customClass="CircularScrollViewDemo2ViewController" customModule="PolarKit_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hrp-IM-l9g"/>
                         <viewControllerLayoutGuide type="bottom" id="6gz-L2-rSb"/>
