@@ -20,8 +20,26 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gsV-pV-b5L">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="497"/>
-                                <color key="backgroundColor" red="0.4431372583" green="0.58431375029999999" blue="0.52549022440000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to animate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WN9-ot-h2n">
+                                        <rect key="frame" x="219" y="461" width="162" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="WN9-ot-h2n" firstAttribute="top" secondItem="gsV-pV-b5L" secondAttribute="top" constant="19" id="pDZ-vd-h8D"/>
+                                    <constraint firstAttribute="bottom" secondItem="WN9-ot-h2n" secondAttribute="bottom" constant="19" id="sb0-HU-tVj"/>
+                                    <constraint firstItem="WN9-ot-h2n" firstAttribute="centerX" secondItem="gsV-pV-b5L" secondAttribute="centerX" id="xze-Yr-gBH"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pDZ-vd-h8D"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="4AE-zE-T6E" appends="YES" id="MrS-4B-45j"/>
                                 </connections>
