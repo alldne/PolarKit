@@ -25,7 +25,7 @@ class CircularScrollViewDemoViewController: UIViewController {
         let contentLength = 4 * M_PI
         let ang = contentLength / Double(n)
         for i in 0..<n {
-            let p = PolarCoordinatedView(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 20))
+            let p = PolarCoordinatedView(radius: 100, angle: ang * Double(i), frame: CGRectMake(0, 0, 40, 30))
             let ratio = CGFloat(Double(i) / Double(n))
             p.backgroundColor = UIColor(red: ratio, green: ratio, blue: 1 - ratio, alpha: 1)
             let label = UILabel()
