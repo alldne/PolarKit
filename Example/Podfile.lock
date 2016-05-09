@@ -27,7 +27,7 @@ SPEC CHECKSUMS:
   FBSnapshotTestCase: 366ecd378511d7716c79991cd8067d1eed23578d
   Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Nimble-Snapshots: 2d15a585b816f7d14947ed6e172218f9d0980ea8
-  PolarKit: b8a9c20e8df3c4a3bf78f63009f4a2ef3fa0ffaf
+  PolarKit: 5e95c340a85213bfe994692bcd7fa7b7c95f36a6
   Quick: 18d057bc66451eedd5d1c8dc99ba2a5db6e60226
 
 COCOAPODS: 0.39.0
