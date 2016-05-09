@@ -12,26 +12,41 @@ import PolarKit
 class RotatableViewDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
+    let animationKey = "myrotation"
     @IBAction func valueChanged(sender: UISlider) {
+        self.rotatable.layer.removeAnimationForKey(animationKey)
         self.rotatable.offset = 4 * M_PI * Double(sender.value)
     }
 
+    var direction: Bool = true
     @IBAction func tapped(sender: AnyObject) {
+        var goal: Double
+        if direction {
+            goal = M_PI * 2
+            self.direction = false
+        } else {
+            goal = 0.0
+            self.direction = true
+        }
+        // FIXME: Worse performance than animating "transform.rotation.z" directly
         let anim = CABasicAnimation(keyPath: "offset")
-        anim.toValue = self.rotatable.offset + M_PI_2
-        self.rotatable.layer.addAnimation(anim, forKey: "myrotation")
+        anim.toValue = goal
+        // FIXME: The actual animation duration on screen is shorter than intended.
+        anim.duration = 2.0
+        anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        self.rotatable.layer.addAnimation(anim, forKey: animationKey)
     }
 
-    var bar: UIView!
+    var content: UIImageView!
 
     var rotatable: RotatableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.rotatable = RotatableView(frame: CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height))
 
-        self.bar = UIView(frame: CGRectMake(0, 0, 40, 10))
-        self.bar.backgroundColor = UIColor.lightGrayColor()
-        self.rotatable.addSubview(self.bar)
+        self.content = UIImageView(image: UIImage(named: "uatt"))
+        self.content.frame.size = CGSizeMake(270, 182)
+        self.rotatable.addSubview(self.content)
         self.container.addSubview(self.rotatable)
     }
 
@@ -42,7 +57,7 @@ class RotatableViewDemoViewController: UIViewController {
 
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        self.rotatable.frame = CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height)
-        self.bar.center = CGPointMake(self.rotatable.frame.size.width/2, self.rotatable.frame.size.height/2)
+        self.rotatable.frame.size = self.container.frame.size
+        self.content.center = self.rotatable.center
     }
 }

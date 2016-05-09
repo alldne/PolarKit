@@ -1,5 +1,5 @@
 //
-//  MaskingDemoViewController.swift
+//  CircularScrollViewDemo2ViewController.swift
 //  PolarKit
 //
 //  Created by Yonguk Jeong on 2016. 4. 30..
@@ -9,7 +9,7 @@
 import UIKit
 import PolarKit
 
-class MaskingDemoViewController: UIViewController {
+class CircularScrollViewDemo2ViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     @IBAction func valueChanged(sender: UISlider) {
