@@ -1,6 +1,6 @@
 # PolarKit
 
-[![CI Status](http://img.shields.io/travis/Jeong Yong-uk/PolarKit.svg?style=flat)](https://travis-ci.org/Jeong Yong-uk/PolarKit)
+[![CI Status](https://travis-ci.org/alldne/PolarKit.svg?branch=master)](https://travis-ci.org/Jeong Yong-uk/PolarKit)
 [![Version](https://img.shields.io/cocoapods/v/PolarKit.svg?style=flat)](http://cocoapods.org/pods/PolarKit)
 [![License](https://img.shields.io/cocoapods/l/PolarKit.svg?style=flat)](http://cocoapods.org/pods/PolarKit)
 [![Platform](https://img.shields.io/cocoapods/p/PolarKit.svg?style=flat)](http://cocoapods.org/pods/PolarKit)
