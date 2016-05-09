@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.author           = { "Jeong Yong-uk" => "ywj1022@gmail.com" }
   s.source           = { :git => "https://github.com/alldne/PolarKit.git", :tag => s.version.to_s }
 
+  s.platform = :ios
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'PolarKit/Classes/**/*'
