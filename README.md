@@ -65,14 +65,17 @@ rotatable.layer.addAnimation(anim, forKey: "your-key")
 
 ![RotatableView](Screenshots/RotatableView.gif)
 
-
 ## Requirements
 
 - Swift 2.2
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project,
+1. Clone the repo
+1. Run `pod install` from the Example directory
+1. Open `Example/PolarKit.xcworkspace`
+1. Run the target named `PolarKit-Example`
 
 ## Installation
 
