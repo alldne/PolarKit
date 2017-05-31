@@ -9,20 +9,20 @@
 import CoreGraphics
 
 func - (a: CGPoint, b: CGPoint) -> CGVector {
-    return CGVectorMake(a.x - b.x, a.y - b.y)
+    return CGVector(dx: a.x - b.x, dy: a.y - b.y)
 }
 
 func * (a: CGVector, f: CGFloat) -> CGVector {
-    return CGVectorMake(a.dx*f, a.dy*f)
+    return CGVector(dx: a.dx*f, dy: a.dy*f)
 }
 
-let PIx2 = 2 * M_PI
+let PIx2 = 2 * Double.pi
 extension CGVector {
     var length: CGFloat {
         return sqrt(pow(self.dx, 2) + pow(self.dy, 2))
     }
 
-    func getAngle(v: CGVector) -> Double {
+    func getAngle(_ v: CGVector) -> Double {
         let lengthA = self.length
         let lengthB = v.length
 
@@ -46,13 +46,13 @@ extension CGVector {
         return Double(rad)
     }
 
-    func getNearbyAngle(v: CGVector, hint: Double) -> Double {
+    func getNearbyAngle(_ v: CGVector, hint: Double) -> Double {
         let angle = self.getAngle(v)
-        let alpha = hint % PIx2
+        let alpha = hint.truncatingRemainder(dividingBy: PIx2)
 
-        if angle < alpha - M_PI {
+        if angle < alpha - Double.pi {
             return hint - alpha + angle + PIx2
-        } else if angle > alpha + M_PI {
+        } else if angle > alpha + Double.pi {
             return hint - alpha + angle - PIx2
         }
         return hint - alpha + angle

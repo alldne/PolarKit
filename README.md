@@ -27,13 +27,13 @@ import PolarKit
 let circular = CircularScrollView(frame: frame)
 
 // PolarCoordinatedView is just a subclass of UIView
-let subview = PolarCoordinatedView(radius: 100, angle: M_PI, frame: anotherFrame)
+let subview = PolarCoordinatedView(radius: 100, angle: Double.pi, frame: anotherFrame)
 
 // Wrap your view with PolarCoordinatedView
 subview.addSubview(yourView)
 
 circular.addSubview(subview)
-circular.contentLength = 2 * M_PI
+circular.contentLength = 2 * Double.pi
 ```
 ![CircularScrollView2](Screenshots/CircularScrollView2.gif)
 
@@ -54,12 +54,12 @@ let rotatable = RotatableView(frame: frame)
 rotatable.addSubview(yourViewToRotate)
 
 // Setting the offset
-rotatable.offset = M_PI
+rotatable.offset = Double.pi
 
 // Adding an animation
 // Unfortunately, `UIView.animateWithDuration()` is not supported
 let anim = CABasicAnimation(keyPath: "offset")
-anim.toValue = 2 * M_PI
+anim.toValue = 2 * Double.pi
 rotatable.layer.addAnimation(anim, forKey: "your-key")
 ```
 

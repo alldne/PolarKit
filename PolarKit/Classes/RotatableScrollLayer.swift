@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class RotatableScrollLayer: RotatableLayer {
-    override public var offset: Double {
+open class RotatableScrollLayer: RotatableLayer {
+    override open var offset: Double {
         didSet {
             self.updateSublayerMask()
         }
     }
 
-    override public var bounds: CGRect {
+    override open var bounds: CGRect {
         didSet {
             self.updateSublayerMask()
         }
@@ -26,35 +26,35 @@ public class RotatableScrollLayer: RotatableLayer {
         return self.contentLayer.sublayers?[0].sublayers
     }
 
-    func makeMaskLayer(currentScrollOffset: Double, targetOffset: Double) -> CAShapeLayer? {
+    func makeMaskLayer(_ currentScrollOffset: Double, targetOffset: Double) -> CAShapeLayer? {
         // The content of PolarCoordinatedLayer with offset 'x' could lay over range [x-π, x+π].
         // We can ensure that the content is fully shown only if the current scroll offset is x-π.
         // The following range [-3π, π] comes from [x-π-2π, x-π+2π]
         let diff = currentScrollOffset - targetOffset
-        if diff > M_PI || diff < -3*M_PI {
+        if diff > Double.pi || diff < -3*Double.pi {
             return CAShapeLayer()
-        } else if diff == -M_PI {
+        } else if diff == -Double.pi {
             return nil
         }
 
         let r = CGFloat((self.bounds.size.width + self.bounds.size.height)/2)
-        let center = CGPointMake(r, r)
+        let center = CGPoint(x: r, y: r)
 
         // -3π < diff < -π: clockwise
         // -π < diff < π: counter-clockwise
         var clockwise = false
-        if -3*M_PI <= diff && diff <= -M_PI {
+        if -3*Double.pi <= diff && diff <= -Double.pi {
             clockwise = true
         }
 
-        let path = UIBezierPath(arcCenter: center, radius: r, startAngle: CGFloat(-M_PI), endAngle: CGFloat(diff), clockwise: clockwise)
-        path.addLineToPoint(center)
-        path.closePath()
+        let path = UIBezierPath(arcCenter: center, radius: r, startAngle: CGFloat(-Double.pi), endAngle: CGFloat(diff), clockwise: clockwise)
+        path.addLine(to: center)
+        path.close()
 
         let layer = CAShapeLayer()
-        layer.path = path.CGPath
-        layer.fillColor = UIColor.blackColor().CGColor
-        layer.bounds.size = CGSizeMake(2*r, 2*r)
+        layer.path = path.cgPath
+        layer.fillColor = UIColor.black.cgColor
+        layer.bounds.size = CGSize(width: 2*r, height: 2*r)
         return layer
     }
 
@@ -67,7 +67,7 @@ public class RotatableScrollLayer: RotatableLayer {
         // I failed to find documentation about it and obviously there's no source codes I can look into.
         // I just observed that the MOMENT is only 1 frame long so decided to ignore it.
         // The following guard statement is a temporary fix.
-        guard let modelLayer = self.modelLayer() as? RotatableScrollLayer where modelLayer.contentLayer === self.contentLayer else {
+        guard let modelLayer = self.model() as? RotatableScrollLayer, modelLayer.contentLayer === self.contentLayer else {
             return
         }
         if let sublayers = self.sublayersInContentView {

@@ -17,17 +17,17 @@ class CircularScrollViewTests: FBSnapshotTestCase {
     }
 
     func makeCircularScrollView() -> CircularScrollView {
-        let circular = CircularScrollView(frame: CGRectMake(0, 0, 100, 100))
+        let circular = CircularScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         let n = 24
-        let contentLength = 4 * M_PI
+        let contentLength = 4 * Double.pi
         let ang = contentLength / Double(n)
         for i in 0..<n {
-            let p = PolarCoordinatedView(radius: 30, angle: ang * Double(i), frame: CGRectMake(0, 0, 30, 20))
+            let p = PolarCoordinatedView(radius: 30, angle: ang * Double(i), frame: CGRect(x: 0, y: 0, width: 30, height: 20))
             let ratio = CGFloat(Double(i) / Double(n))
             p.backgroundColor = UIColor(red: ratio, green: ratio, blue: 1 - ratio, alpha: 1)
             let label = UILabel()
             label.text = "\(i)"
-            label.font = UIFont.systemFontOfSize(8)
+            label.font = UIFont.systemFont(ofSize: 8)
             label.sizeToFit()
             label.textColor = UIColor(red: 1 - ratio, green: 1 - ratio, blue: ratio, alpha: 1)
             label.center = p.center
@@ -41,30 +41,30 @@ class CircularScrollViewTests: FBSnapshotTestCase {
     }
 
     func testBasic() {
-        let view = CircularScrollView(frame: CGRectMake(0, 0, 100, 100))
+        let view = CircularScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         FBSnapshotVerifyView(view)
         FBSnapshotVerifyLayer(view.layer)
     }
 
     func testBackgroundColor() {
-        let view = CircularScrollView(frame: CGRectMake(0, 0, 100, 100))
-        view.backgroundColor = UIColor.blueColor()
+        let view = CircularScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view.backgroundColor = UIColor.blue
         FBSnapshotVerifyView(view)
         FBSnapshotVerifyLayer(view.layer)
     }
 
-    func makeSubview(text: String) -> UIView {
+    func makeSubview(_ text: String) -> UIView {
         let label = UILabel()
         label.text = text
-        label.font = UIFont.systemFontOfSize(8)
+        label.font = UIFont.systemFont(ofSize: 8)
         label.sizeToFit()
-        label.backgroundColor = UIColor.brownColor()
+        label.backgroundColor = UIColor.brown
         return label
     }
 
     func testSubview() {
-        let view = CircularScrollView(frame: CGRectMake(0, 0, 100, 100))
-        view.backgroundColor = UIColor.lightGrayColor()
+        let view = CircularScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view.backgroundColor = UIColor.lightGray
         let subview = self.makeSubview("SUBVIEW")
 
         subview.center = view.center
@@ -74,20 +74,20 @@ class CircularScrollViewTests: FBSnapshotTestCase {
         FBSnapshotVerifyLayer(view.layer)
     }
 
-    func makePolarCoordinatedSubview(text: String) -> PolarCoordinatedView {
+    func makePolarCoordinatedSubview(_ text: String) -> PolarCoordinatedView {
         let polar = PolarCoordinatedView()
         let label = self.makeSubview(text)
         polar.frame.size = label.frame.size
         polar.center = label.center
         polar.addSubview(label)
-        polar.layer.borderColor = UIColor.redColor().CGColor
+        polar.layer.borderColor = UIColor.red.cgColor
         polar.layer.borderWidth = 1.0
         return polar
     }
 
-    func makeCircularScrollViewWithPolarCoordinatedSubview(text: String, modifySubview: (PolarCoordinatedView -> Void)? = nil) -> CircularScrollView {
-        let view = CircularScrollView(frame: CGRectMake(0, 0, 100, 100))
-        view.backgroundColor = UIColor.lightGrayColor()
+    func makeCircularScrollViewWithPolarCoordinatedSubview(_ text: String, modifySubview: ((PolarCoordinatedView) -> Void)? = nil) -> CircularScrollView {
+        let view = CircularScrollView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        view.backgroundColor = UIColor.lightGray
         let subview = self.makePolarCoordinatedSubview(text)
         modifySubview?(subview)
         view.addSubview(subview)
@@ -112,7 +112,7 @@ class CircularScrollViewTests: FBSnapshotTestCase {
 
     func testPolarCoordinatedSubview_angle45_radius20() {
         let view = self.makeCircularScrollViewWithPolarCoordinatedSubview("POLAR") { subview in
-            subview.angle = M_PI_4
+            subview.angle = .pi / 4
             subview.radius = 20
         }
 
@@ -122,7 +122,7 @@ class CircularScrollViewTests: FBSnapshotTestCase {
 
     func testPolarCoordinatedSubview_angle45() {
         let view = self.makeCircularScrollViewWithPolarCoordinatedSubview("POLAR 45") { subview in
-            subview.angle = M_PI_4
+            subview.angle = .pi / 4
         }
 
         FBSnapshotVerifyView(view)
@@ -131,7 +131,7 @@ class CircularScrollViewTests: FBSnapshotTestCase {
 
     func testPolarCoordinatedSubview_angle360() {
         let view = self.makeCircularScrollViewWithPolarCoordinatedSubview("POLAR 360") { subview in
-            subview.angle = 2*M_PI
+            subview.angle = 2*Double.pi
         }
 
         FBSnapshotVerifyView(view)
@@ -146,21 +146,21 @@ class CircularScrollViewTests: FBSnapshotTestCase {
 
     func testOffset45() {
         let view = self.makeCircularScrollView()
-        view.offset = M_PI_4
+        view.offset = .pi / 4
         FBSnapshotVerifyView(view)
         FBSnapshotVerifyLayer(view.layer)
     }
 
     func testOffset360() {
         let view = self.makeCircularScrollView()
-        view.offset = 2*M_PI
+        view.offset = 2*Double.pi
         FBSnapshotVerifyView(view)
         FBSnapshotVerifyLayer(view.layer)
     }
 
     func testOffset540() {
         let view = self.makeCircularScrollView()
-        view.offset = 3*M_PI
+        view.offset = 3*Double.pi
         FBSnapshotVerifyView(view)
         FBSnapshotVerifyLayer(view.layer)
     }

@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class PolarCoordinatedView: UIView {
-    override public class func layerClass() -> AnyClass {
+open class PolarCoordinatedView: UIView {
+    override open class var layerClass : AnyClass {
         return PolarCoordinatedLayer.self
     }
 
-    override public var layer: PolarCoordinatedLayer {
+    override open var layer: PolarCoordinatedLayer {
         return super.layer as! PolarCoordinatedLayer
     }
 
-    public var radius: Double {
+    open var radius: Double {
         set {
             self.layer.radius = newValue
         }
@@ -26,7 +26,7 @@ public class PolarCoordinatedView: UIView {
         }
     }
 
-    public var angle: Double {
+    open var angle: Double {
         set {
             self.layer.angle = newValue
         }
@@ -42,7 +42,7 @@ public class PolarCoordinatedView: UIView {
     }
 
     convenience public init() {
-        self.init(radius: 0, angle: 0, frame: CGRectZero)
+        self.init(radius: 0, angle: 0, frame: CGRect.zero)
     }
 
     required public init?(coder aDecoder: NSCoder) {

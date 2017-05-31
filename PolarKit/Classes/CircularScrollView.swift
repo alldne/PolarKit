@@ -8,7 +8,7 @@
 
 import UIKit
 
-func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (bound: Double -> Double, inverse: Double -> Double) {
+func makeBoundFunction(lower: Double, upper: Double, margin: Double) -> (bound: (Double) -> Double, inverse: (Double) -> Double) {
     return (
         { (input) in
             if lower <= input && input <= upper {
@@ -34,16 +34,16 @@ func makeBoundFunction(lower lower: Double, upper: Double, margin: Double) -> (b
     )
 }
 
-func getTangentialVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoint) -> CGVector {
+func getTangentialVelocity(center: CGPoint, point: CGPoint, velocity: CGPoint) -> CGVector {
     let r = point - center
-    let v = CGVectorMake(velocity.x, velocity.y)
+    let v = CGVector(dx: velocity.x, dy: velocity.y)
 
     let length = (r.dx*v.dy - r.dy*v.dx) / r.length
-    let tangentialUnit = CGVectorMake(-r.dy/r.length, r.dx/r.length)
+    let tangentialUnit = CGVector(dx: -r.dy/r.length, dy: r.dx/r.length)
     return tangentialUnit * length
 }
 
-func getAngularVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoint) -> Double {
+func getAngularVelocity(center: CGPoint, point: CGPoint, velocity: CGPoint) -> Double {
     let t = getTangentialVelocity(center: center, point: point, velocity: velocity)
     if t.length == 0 {
         return 0
@@ -55,12 +55,12 @@ func getAngularVelocity(center center: CGPoint, point: CGPoint, velocity: CGPoin
     return Double(-t.length / point.length)
 }
 
-public class CircularScrollView: RotatableView {
-    override public class func layerClass() -> AnyClass {
+open class CircularScrollView: RotatableView {
+    override open class var layerClass : AnyClass {
         return RotatableScrollLayer.self
     }
 
-    override public var layer: RotatableScrollLayer {
+    override open var layer: RotatableScrollLayer {
         return super.layer as! RotatableScrollLayer
     }
 
@@ -74,17 +74,17 @@ public class CircularScrollView: RotatableView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    private var bound = makeBoundFunction(lower: 0, upper: 0, margin: M_PI_4)
+    fileprivate var bound = makeBoundFunction(lower: 0, upper: 0, margin: .pi / 4)
 
-    public var contentLength: Double = 0 {
+    open var contentLength: Double = 0 {
         didSet {
-            self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: M_PI_4)
+            self.bound = makeBoundFunction(lower: 0, upper: self.contentLength, margin: .pi / 4)
         }
     }
 
-    override public var offset: Double {
+    override open var offset: Double {
         willSet {
-            if self.layer.animationForKey(CircularScrollView.kAnimationKey) != nil {
+            if self.layer.animation(forKey: CircularScrollView.kAnimationKey) != nil {
                 self.cancelAnimation()
             }
         }
@@ -93,8 +93,8 @@ public class CircularScrollView: RotatableView {
         }
     }
 
-    private var _dragOffset: Double = 0
-    private var dragOffset: Double {
+    fileprivate var _dragOffset: Double = 0
+    fileprivate var dragOffset: Double {
         get {
             return self._dragOffset
         }
@@ -104,50 +104,50 @@ public class CircularScrollView: RotatableView {
         }
     }
 
-    private struct TouchInfo {
+    fileprivate struct TouchInfo {
         var initialPoint: CGVector
         var initialDragOffset: Double
         var offsetFromInitialPoint: Double
     }
 
-    private var touchInfo: TouchInfo!
+    fileprivate var touchInfo: TouchInfo!
 
     static let kInertiaThreshhold = 0.8
     static let kInertiaAnimationDuration = 2.5
     static let kAnimationKey = "scroll-to-offset"
 
-    func dragging(recognizer: UIPanGestureRecognizer) {
+    func dragging(_ recognizer: UIPanGestureRecognizer) {
         switch recognizer.state {
-        case .Began:
+        case .began:
             self._dragOffset = self.bound.inverse(offset)
-            let initialPoint = recognizer.locationInView(self) - self.center
+            let initialPoint = recognizer.location(in: self) - self.center
             self.touchInfo = TouchInfo(initialPoint: initialPoint, initialDragOffset: self.dragOffset, offsetFromInitialPoint: 0)
-        case .Changed:
-            let v = recognizer.locationInView(self) - self.center
+        case .changed:
+            let v = recognizer.location(in: self) - self.center
             self.touchInfo.offsetFromInitialPoint = v.getNearbyAngle(self.touchInfo.initialPoint, hint: self.touchInfo.offsetFromInitialPoint)
             self.dragOffset = self.touchInfo.initialDragOffset + self.touchInfo.offsetFromInitialPoint
-        case .Ended:
+        case .ended:
             self.touchInfo = nil
             if self.offset < 0 {
                 self.scrollToOffset(0, animate: true)
             } else if self.offset > self.contentLength {
                 self.scrollToOffset(self.contentLength, animate: true)
             } else {
-                let w = getAngularVelocity(center: self.center, point: recognizer.locationInView(self), velocity: recognizer.velocityInView(self))
+                let w = getAngularVelocity(center: self.center, point: recognizer.location(in: self), velocity: recognizer.velocity(in: self))
                 if abs(w) > CircularScrollView.kInertiaThreshhold {
                     let t = CircularScrollView.kInertiaAnimationDuration
                     let endPoint = self.offset - w*t - 0.5*(-w)*t
                     self.scrollToOffset(endPoint, animate: true)
                 }
             }
-        case .Cancelled:
+        case .cancelled:
             self.touchInfo = nil
         default:
             break
         }
     }
 
-    public func scrollToOffset(offset: Double, animate: Bool) {
+    open func scrollToOffset(_ offset: Double, animate: Bool) {
         var offsetInRange = offset
         if offset < 0 {
             offsetInRange = 0
@@ -159,27 +159,27 @@ public class CircularScrollView: RotatableView {
         anim.toValue = offsetInRange
         anim.duration = CircularScrollView.kInertiaAnimationDuration
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-        self.layer.addAnimation(anim, forKey: CircularScrollView.kAnimationKey)
+        self.layer.add(anim, forKey: CircularScrollView.kAnimationKey)
     }
 
-    public func cancelAnimation() {
-        self.layer.removeAnimationForKey(CircularScrollView.kAnimationKey)
+    open func cancelAnimation() {
+        self.layer.removeAnimation(forKey: CircularScrollView.kAnimationKey)
     }
 
     // MARK: UIView methods
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
-        let localCenter = self.convertPoint(self.center, fromView: self.superview)
+        let localCenter = self.convert(self.center, from: self.superview)
         for subview in self.contentView.subviews {
             if let view  = subview as? PolarCoordinatedView {
                 let x = localCenter.x + CGFloat(view.radius * cos(view.angle))
                 let y = localCenter.y + CGFloat(view.radius * sin(view.angle))
-                view.center = CGPointMake(x, y)
+                view.center = CGPoint(x: x, y: y)
             }
         }
     }
 
-    override public func addSubview(view: UIView) {
+    override open func addSubview(_ view: UIView) {
         super.addSubview(view)
         self.layer.updateSublayerMask()
     }

@@ -8,8 +8,8 @@
 
 import UIKit
 
-public class RotatableLayer: CALayer {
-    public var offset: Double {
+open class RotatableLayer: CALayer {
+    open var offset: Double {
         set {
             self.contentLayer.angle = -newValue
         }
@@ -18,7 +18,7 @@ public class RotatableLayer: CALayer {
         }
     }
 
-    override public var bounds: CGRect {
+    override open var bounds: CGRect {
         get {
             return super.bounds
         }
@@ -39,7 +39,7 @@ public class RotatableLayer: CALayer {
         self.updateContentLayerFitToSize(self.bounds.size)
     }
 
-    override public init(layer: AnyObject) {
+    override public init(layer: Any) {
         // This initializer is used to create shadow copies of layers, for example, for the presentationLayer method.
         // Using this method in any other situation will produce undefined behavior.
         // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CALayer_class/#//apple_ref/occ/instm/CALayer/initWithLayer:
@@ -50,12 +50,12 @@ public class RotatableLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public class func needsDisplayForKey(key: String) -> Bool {
-        return key == "offset" || super.needsDisplayForKey(key)
+    override open class func needsDisplay(forKey key: String) -> Bool {
+        return key == "offset" || super.needsDisplay(forKey: key)
     }
 
-    private func updateContentLayerFitToSize(size: CGSize) {
+    fileprivate func updateContentLayerFitToSize(_ size: CGSize) {
         self.contentLayer.bounds.size = size
-        self.contentLayer.position = CGPointMake(size.width/2, size.height/2)
+        self.contentLayer.position = CGPoint(x: size.width/2, y: size.height/2)
     }
 }

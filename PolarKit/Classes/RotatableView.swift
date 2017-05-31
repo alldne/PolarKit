@@ -8,16 +8,16 @@
 
 import UIKit
 
-public class RotatableView: UIView {
-    override public class func layerClass() -> AnyClass {
+open class RotatableView: UIView {
+    override open class var layerClass : AnyClass {
         return RotatableLayer.self
     }
 
-    override public var layer: RotatableLayer {
+    override open var layer: RotatableLayer {
         return super.layer as! RotatableLayer
     }
 
-    public var offset: Double {
+    open var offset: Double {
         get {
             return self.layer.offset
         }
@@ -32,7 +32,7 @@ public class RotatableView: UIView {
         super.init(frame: frame)
 
         // FIXME: without setting a background color explicitly, background color is black (as I know it means no drawing)
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
 
         // FIXME: what if self.contentView.removeFromSuperview()?
         self.layer.contentLayer.addSublayer(self.contentView.layer)
@@ -42,7 +42,7 @@ public class RotatableView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    override public func addSubview(view: UIView) {
+    override open func addSubview(_ view: UIView) {
         self.contentView.addSubview(view)
     }
 }

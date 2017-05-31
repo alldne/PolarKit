@@ -13,16 +13,16 @@ class RotatableViewDemoViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
     let animationKey = "myrotation"
-    @IBAction func valueChanged(sender: UISlider) {
-        self.rotatable.layer.removeAnimationForKey(animationKey)
-        self.rotatable.offset = 4 * M_PI * Double(sender.value)
+    @IBAction func valueChanged(_ sender: UISlider) {
+        self.rotatable.layer.removeAnimation(forKey: animationKey)
+        self.rotatable.offset = 4 * .pi * Double(sender.value)
     }
 
     var direction: Bool = true
-    @IBAction func tapped(sender: AnyObject) {
+    @IBAction func tapped(_ sender: AnyObject) {
         var goal: Double
         if direction {
-            goal = M_PI * 2
+            goal = .pi * 2
             self.direction = false
         } else {
             goal = 0.0
@@ -34,7 +34,7 @@ class RotatableViewDemoViewController: UIViewController {
         // FIXME: The actual animation duration on screen is shorter than intended.
         anim.duration = 2.0
         anim.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        self.rotatable.layer.addAnimation(anim, forKey: animationKey)
+        self.rotatable.layer.add(anim, forKey: animationKey)
     }
 
     var content: UIImageView!
@@ -42,10 +42,10 @@ class RotatableViewDemoViewController: UIViewController {
     var rotatable: RotatableView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.rotatable = RotatableView(frame: CGRectMake(0, 0, self.container.frame.size.width, self.container.frame.size.height))
+        self.rotatable = RotatableView(frame: CGRect(x: 0, y: 0, width: self.container.frame.size.width, height: self.container.frame.size.height))
 
         self.content = UIImageView(image: UIImage(named: "uatt"))
-        self.content.frame.size = CGSizeMake(270, 182)
+        self.content.frame.size = CGSize(width: 270, height: 182)
         self.rotatable.addSubview(self.content)
         self.container.addSubview(self.rotatable)
     }

@@ -12,7 +12,7 @@ import PolarKit
 class CircularScrollViewDemo2ViewController: UIViewController {
     @IBOutlet weak var container: UIView!
 
-    @IBAction func valueChanged(sender: UISlider) {
+    @IBAction func valueChanged(_ sender: UISlider) {
         self.circularScrollView.offset = self.circularScrollView.contentLength * Double(sender.value)
     }
 
@@ -21,16 +21,16 @@ class CircularScrollViewDemo2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let makeView = { (radius: Double, angle: Double, color: UIColor) -> PolarCoordinatedView in
-            let p = PolarCoordinatedView(radius: radius, angle: angle, frame: CGRectMake(0, 0, 100, 100))
+            let p = PolarCoordinatedView(radius: radius, angle: angle, frame: CGRect(x: 0, y: 0, width: 100, height: 100))
             p.backgroundColor = color
             p.layer.opacity = 0.5
             return p
         }
 
-        self.circularScrollView = CircularScrollView(frame: CGRectZero)
+        self.circularScrollView = CircularScrollView(frame: CGRect.zero)
 
         let n = 24
-        let contentLength = 4 * M_PI
+        let contentLength = 4 * Double.pi
         let ang = contentLength / Double(n)
         let r = 200 / Double(n)
         for i in 0...n {

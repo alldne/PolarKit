@@ -9,43 +9,43 @@ class TableOfContentsSpec: QuickSpec {
         describe("math") {
             describe("CGVector extension") {
                 it("can calculate the angle between two vectors") {
-                    let v1 = CGVectorMake(1, 1)
-                    let v2 = CGVectorMake(1, 1)
+                    let v1 = CGVector(dx: 1, dy: 1)
+                    let v2 = CGVector(dx: 1, dy: 1)
                     expect(v1.getAngle(v2)).to(beCloseTo(0))
                 }
 
                 it("can calculate the angle between two vectors") {
-                    let v1 = CGVectorMake(-1.333343505859375, -2.5)
-                    let v2 = CGVectorMake(-1.333343505859375, -2.5)
+                    let v1 = CGVector(dx: -1.333343505859375, dy: -2.5)
+                    let v2 = CGVector(dx: -1.333343505859375, dy: -2.5)
                     expect(v1.getAngle(v2)).to(beCloseTo(0))
                 }
 
                 it("can calculate the angle between two vectors which is nearby with given hint") {
-                    let v1 = CGVectorMake(1, 1)
-                    let v2 = CGVectorMake(1, 1)
+                    let v1 = CGVector(dx: 1, dy: 1)
+                    let v2 = CGVector(dx: 1, dy: 1)
                     let hint = 0.0
                     expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(0))
                 }
 
                 it("can calculate the angle between two vectors which is nearby with given hint") {
-                    let v1 = CGVectorMake(-1.333343505859375, -2.5)
-                    let v2 = CGVectorMake(-1.333343505859375, -2.5)
+                    let v1 = CGVector(dx: -1.333343505859375, dy: -2.5)
+                    let v2 = CGVector(dx: -1.333343505859375, dy: -2.5)
                     let hint = 0.0
                     expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(0))
                 }
 
                 it("can calculate the angle between two vectors which is nearby with given hint") {
-                    let v1 = CGVectorMake(1, 1)
-                    let v2 = CGVectorMake(1, 1)
-                    let hint = 3*M_PI - 1
-                    expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(2*M_PI))
+                    let v1 = CGVector(dx: 1, dy: 1)
+                    let v2 = CGVector(dx: 1, dy: 1)
+                    let hint = 3 * Double.pi - 1
+                    expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(2 * .pi))
                 }
 
                 it("can calculate the angle between two vectors which is nearby with given hint") {
-                    let v1 = CGVectorMake(1, 0)
-                    let v2 = CGVectorMake(0, 1)
-                    let hint = -2*M_PI
-                    expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(-M_PI*3/2))
+                    let v1 = CGVector(dx: 1, dy: 0)
+                    let v2 = CGVector(dx: 0, dy: 1)
+                    let hint = -2 * Double.pi
+                    expect(v1.getNearbyAngle(v2, hint: hint)).to(beCloseTo(-.pi * 3 / 2))
                 }
             }
 
