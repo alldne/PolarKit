@@ -42,7 +42,7 @@ open class RotatableLayer: CALayer {
     override public init(layer: Any) {
         // This initializer is used to create shadow copies of layers, for example, for the presentationLayer method.
         // Using this method in any other situation will produce undefined behavior.
-        // https://developer.apple.com/library/mac/documentation/GraphicsImaging/Reference/CALayer_class/#//apple_ref/occ/instm/CALayer/initWithLayer:
+        // https://developer.apple.com/documentation/quartzcore/calayer/1410842-init
         super.init(layer: layer)
     }
 
@@ -50,6 +50,8 @@ open class RotatableLayer: CALayer {
         fatalError("init(coder:) has not been implemented")
     }
 
+    // FIXME: RotatableLayer doesn't need display for key "offset".
+    // But it seems that by returning true for it, CA does tweening for the property "offset".
     override open class func needsDisplay(forKey key: String) -> Bool {
         return key == "offset" || super.needsDisplay(forKey: key)
     }

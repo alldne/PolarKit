@@ -60,7 +60,8 @@ open class RotatableScrollLayer: RotatableLayer {
 
     func updateSublayerMask() {
         // FIXME: Dear me,
-        // This method modifies sublayers. And init(layer: AnyObject) does not do a deep copy of its sublayers.
+        // When animation occurs, the presentationLayer are copied from the modelLayer and it uses init(layer: Any) for copying.
+        // This method modifies sublayers. And init(layer: Any) does not do a deep copy of its sublayers.
         // So calling this method during the animation eventually changes the modelLayer, not the presentationLayer. It's not nice but intended.
         // But there's a exceptional case. If an animation is fired while the other animation is on-the-fly, CoreAnimation do a deep-copy of its sublayers.
         // And calling this method on that moment throws an exception: 'CALayerInvalidTree', reason: 'expecting model layer not copy: ...'.
