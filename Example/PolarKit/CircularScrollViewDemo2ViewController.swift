@@ -29,7 +29,7 @@ class CircularScrollViewDemo2ViewController: UIViewController {
 
         self.circularScrollView = CircularScrollView(frame: CGRect.zero)
 
-        let n = 24
+        let n = 96
         let contentLength = 4 * Double.pi
         let ang = contentLength / Double(n)
         let r = 200 / Double(n)
