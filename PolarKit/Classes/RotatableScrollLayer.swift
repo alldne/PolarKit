@@ -73,9 +73,15 @@ open class RotatableScrollLayer: RotatableLayer {
         }
         if let sublayers = self.sublayersInContentView {
             // FIXME: It is not necessary to iterate on every sublayer.
-            // Only layers in the range [-3π, π] are needed
+            // Only layers in the range [-π, 3π] are needed
             for sub in sublayers {
                 if let sub = sub as? PolarCoordinatedLayer {
+                    let diff = sub.angle - self.offset
+                    if diff > 3 * Double.pi || diff < -Double.pi {
+                        sub.isHidden = true
+                        continue
+                    }
+                    sub.isHidden = false
                     let mask = self.makeMaskLayer(self.offset, targetOffset: sub.angle)
                     mask?.position.y = sub.bounds.height/2
                     mask?.position.x = sub.bounds.width/2 - CGFloat(sub.radius)
