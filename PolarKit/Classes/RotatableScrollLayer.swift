@@ -76,6 +76,7 @@ open class RotatableScrollLayer: RotatableLayer {
             // Only layers in the range [-3π, π] are needed
             for sub in sublayers {
                 if let sub = sub as? PolarCoordinatedLayer {
+                    print("@@", sub.angle)
                     let mask = self.makeMaskLayer(self.offset, targetOffset: sub.angle)
                     mask?.position.y = sub.bounds.height/2
                     mask?.position.x = sub.bounds.width/2 - CGFloat(sub.radius)

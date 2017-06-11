@@ -20,6 +20,7 @@
 		EE0677371CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677341CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift */; };
 		EE0677381CDC3F260062D258 /* RotatableViewDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */; };
 		EE36D6A91CE04F7E00238939 /* uatt.png in Resources */ = {isa = PBXBuildFile; fileRef = EE36D6A81CE04F7E00238939 /* uatt.png */; };
+		EECFF1E31EE9C13500A19CC0 /* PerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECFF1E21EE9C13500A19CC0 /* PerformanceTests.swift */; };
 		EEFA8CB71CDCFECA00DE823F /* PolarCoordinatedViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,7 @@
 		EE0677341CDC3F260062D258 /* CircularScrollViewDemo2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = CircularScrollViewDemo2ViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE0677351CDC3F260062D258 /* RotatableViewDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = RotatableViewDemoViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		EE36D6A81CE04F7E00238939 /* uatt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uatt.png; sourceTree = "<group>"; };
+		EECFF1E21EE9C13500A19CC0 /* PerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerformanceTests.swift; sourceTree = "<group>"; };
 		EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = PolarCoordinatedViewTests.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				EEFA8CB61CDCFECA00DE823F /* PolarCoordinatedViewTests.swift */,
 				EE00FA631CDDB55C00411479 /* RotatableViewTests.swift */,
 				EE00FA651CDDBED300411479 /* CircularScrollViewTests.swift */,
+				EECFF1E21EE9C13500A19CC0 /* PerformanceTests.swift */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -394,6 +397,7 @@
 				EEFA8CB71CDCFECA00DE823F /* PolarCoordinatedViewTests.swift in Sources */,
 				EE00FA641CDDB55C00411479 /* RotatableViewTests.swift in Sources */,
 				EE00FA661CDDBED300411479 /* CircularScrollViewTests.swift in Sources */,
+				EECFF1E31EE9C13500A19CC0 /* PerformanceTests.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
